@@ -1,2 +1,3 @@
-# Fake_Steam
+﻿# Fake_Steam
 Proyecto final académico de la asignatura de Taller de Base de Datos.
+Guillermo Abneed Rodriguez Velazquez
