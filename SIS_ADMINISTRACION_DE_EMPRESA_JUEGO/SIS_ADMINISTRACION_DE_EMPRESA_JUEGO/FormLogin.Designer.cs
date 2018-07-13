@@ -1,6 +1,6 @@
 ﻿namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
 {
-    partial class frmLOGIN
+    partial class FormLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLOGIN));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.grpDATOS = new System.Windows.Forms.GroupBox();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblContra = new System.Windows.Forms.Label();

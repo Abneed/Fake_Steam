@@ -23,7 +23,7 @@ namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            frmLOGIN frm1 = new frmLOGIN();
+            FormLogin frm1 = new FormLogin();
             frm1.Visible = true;
             this.Dispose();
         }

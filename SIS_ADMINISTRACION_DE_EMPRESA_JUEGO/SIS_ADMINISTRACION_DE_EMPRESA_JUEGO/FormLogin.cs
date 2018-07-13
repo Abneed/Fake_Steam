@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
 {
-    public partial class frmLOGIN : Form
+    public partial class FormLogin : Form
     {
-        public frmLOGIN()
+        public FormLogin()
         {
             InitializeComponent();
         }
-        ~ frmLOGIN()
+        ~ FormLogin()
         {
             this.Dispose();
         }
