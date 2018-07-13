@@ -30,20 +30,20 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.grpDATOS = new System.Windows.Forms.GroupBox();
-            this.lblUsuario = new System.Windows.Forms.Label();
+            this.txtContra = new System.Windows.Forms.TextBox();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
             this.lblContra = new System.Windows.Forms.Label();
+            this.lblUsuario = new System.Windows.Forms.Label();
             this.btnINGRESAR = new System.Windows.Forms.Button();
             this.btnSALIR = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.grpDATOS.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpDATOS
             // 
-            this.grpDATOS.Controls.Add(this.textBox2);
-            this.grpDATOS.Controls.Add(this.textBox1);
+            this.grpDATOS.Controls.Add(this.txtContra);
+            this.grpDATOS.Controls.Add(this.txtUsuario);
             this.grpDATOS.Controls.Add(this.lblContra);
             this.grpDATOS.Controls.Add(this.lblUsuario);
             this.grpDATOS.Location = new System.Drawing.Point(38, 12);
@@ -53,14 +53,20 @@
             this.grpDATOS.TabStop = false;
             this.grpDATOS.Text = "DATOS";
             // 
-            // lblUsuario
+            // txtContra
             // 
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(22, 23);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(59, 13);
-            this.lblUsuario.TabIndex = 0;
-            this.lblUsuario.Text = "USUARIO:";
+            this.txtContra.Location = new System.Drawing.Point(87, 62);
+            this.txtContra.Name = "txtContra";
+            this.txtContra.PasswordChar = '*';
+            this.txtContra.Size = new System.Drawing.Size(156, 20);
+            this.txtContra.TabIndex = 3;
+            // 
+            // txtUsuario
+            // 
+            this.txtUsuario.Location = new System.Drawing.Point(87, 23);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(156, 20);
+            this.txtUsuario.TabIndex = 2;
             // 
             // lblContra
             // 
@@ -70,6 +76,15 @@
             this.lblContra.Size = new System.Drawing.Size(84, 13);
             this.lblContra.TabIndex = 1;
             this.lblContra.Text = "CONTRASEÑA:";
+            // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Location = new System.Drawing.Point(22, 23);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(59, 13);
+            this.lblUsuario.TabIndex = 0;
+            this.lblUsuario.Text = "USUARIO:";
             // 
             // btnINGRESAR
             // 
@@ -91,20 +106,6 @@
             this.btnSALIR.UseVisualStyleBackColor = true;
             this.btnSALIR.Click += new System.EventHandler(this.btnSALIR_Click);
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(87, 23);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(156, 20);
-            this.textBox1.TabIndex = 2;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(87, 62);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(156, 20);
-            this.textBox2.TabIndex = 3;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -115,7 +116,7 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "©DERECHOS RESERVADOS 2018";
             // 
-            // frmLOGIN
+            // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -127,7 +128,7 @@
             this.Controls.Add(this.btnSALIR);
             this.Controls.Add(this.btnINGRESAR);
             this.Controls.Add(this.grpDATOS);
-            this.Name = "frmLOGIN";
+            this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "USUARIO/CONTRASEÑA";
             this.grpDATOS.ResumeLayout(false);
@@ -140,8 +141,8 @@
         #endregion
 
         private System.Windows.Forms.GroupBox grpDATOS;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtContra;
+        private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Label lblContra;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Button btnINGRESAR;
