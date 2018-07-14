@@ -50,14 +50,16 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.grpPERSONAL = new System.Windows.Forms.GroupBox();
             this.grpPERFIL = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.txtNOMBREPERFIL = new System.Windows.Forms.TextBox();
+            this.txtCORREO = new System.Windows.Forms.TextBox();
+            this.txtDESCPRIPCION = new System.Windows.Forms.TextBox();
+            this.txtAPELLIDOPATERNO = new System.Windows.Forms.TextBox();
+            this.txtAPELLIDOMATERNO = new System.Windows.Forms.TextBox();
+            this.dtpNACIMIENTO = new System.Windows.Forms.DateTimePicker();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtNOMBRE = new System.Windows.Forms.TextBox();
             this.grpDATOS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picIMAGEN)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -73,7 +75,7 @@
             this.grpDATOS.Controls.Add(this.btnAGREGARUSUARIO);
             this.grpDATOS.Location = new System.Drawing.Point(47, 27);
             this.grpDATOS.Name = "grpDATOS";
-            this.grpDATOS.Size = new System.Drawing.Size(378, 417);
+            this.grpDATOS.Size = new System.Drawing.Size(378, 454);
             this.grpDATOS.TabIndex = 0;
             this.grpDATOS.TabStop = false;
             this.grpDATOS.Text = "DATOS:";
@@ -81,16 +83,16 @@
             // picIMAGEN
             // 
             this.picIMAGEN.Image = ((System.Drawing.Image)(resources.GetObject("picIMAGEN.Image")));
-            this.picIMAGEN.Location = new System.Drawing.Point(478, 40);
+            this.picIMAGEN.Location = new System.Drawing.Point(431, 3);
             this.picIMAGEN.Name = "picIMAGEN";
-            this.picIMAGEN.Size = new System.Drawing.Size(253, 276);
+            this.picIMAGEN.Size = new System.Drawing.Size(300, 326);
             this.picIMAGEN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picIMAGEN.TabIndex = 1;
             this.picIMAGEN.TabStop = false;
             // 
             // btnBUSCAR
             // 
-            this.btnBUSCAR.Location = new System.Drawing.Point(540, 328);
+            this.btnBUSCAR.Location = new System.Drawing.Point(518, 335);
             this.btnBUSCAR.Name = "btnBUSCAR";
             this.btnBUSCAR.Size = new System.Drawing.Size(124, 23);
             this.btnBUSCAR.TabIndex = 2;
@@ -100,9 +102,9 @@
             // 
             // btnSALIR
             // 
-            this.btnSALIR.Location = new System.Drawing.Point(651, 421);
+            this.btnSALIR.Location = new System.Drawing.Point(655, 439);
             this.btnSALIR.Name = "btnSALIR";
-            this.btnSALIR.Size = new System.Drawing.Size(75, 23);
+            this.btnSALIR.Size = new System.Drawing.Size(76, 42);
             this.btnSALIR.TabIndex = 3;
             this.btnSALIR.Text = "&SALIR";
             this.btnSALIR.UseVisualStyleBackColor = true;
@@ -110,7 +112,7 @@
             // 
             // btnAGREGARUSUARIO
             // 
-            this.btnAGREGARUSUARIO.Location = new System.Drawing.Point(298, 375);
+            this.btnAGREGARUSUARIO.Location = new System.Drawing.Point(298, 412);
             this.btnAGREGARUSUARIO.Name = "btnAGREGARUSUARIO";
             this.btnAGREGARUSUARIO.Size = new System.Drawing.Size(74, 36);
             this.btnAGREGARUSUARIO.TabIndex = 4;
@@ -201,7 +203,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 85);
+            this.label4.Location = new System.Drawing.Point(15, 123);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(115, 13);
             this.label4.TabIndex = 14;
@@ -233,7 +235,7 @@
             this.groupBox1.Controls.Add(this.cmbCIUDAD);
             this.groupBox1.Controls.Add(this.lblESTADO);
             this.groupBox1.Controls.Add(this.lblCIUDAD);
-            this.groupBox1.Location = new System.Drawing.Point(16, 254);
+            this.groupBox1.Location = new System.Drawing.Point(16, 290);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(343, 116);
             this.groupBox1.TabIndex = 4;
@@ -242,24 +244,26 @@
             // 
             // grpPERSONAL
             // 
-            this.grpPERSONAL.Controls.Add(this.dateTimePicker1);
-            this.grpPERSONAL.Controls.Add(this.textBox5);
-            this.grpPERSONAL.Controls.Add(this.textBox4);
+            this.grpPERSONAL.Controls.Add(this.txtNOMBRE);
+            this.grpPERSONAL.Controls.Add(this.label7);
+            this.grpPERSONAL.Controls.Add(this.dtpNACIMIENTO);
+            this.grpPERSONAL.Controls.Add(this.txtAPELLIDOMATERNO);
+            this.grpPERSONAL.Controls.Add(this.txtAPELLIDOPATERNO);
             this.grpPERSONAL.Controls.Add(this.label2);
             this.grpPERSONAL.Controls.Add(this.label3);
             this.grpPERSONAL.Controls.Add(this.label4);
             this.grpPERSONAL.Location = new System.Drawing.Point(16, 134);
             this.grpPERSONAL.Name = "grpPERSONAL";
-            this.grpPERSONAL.Size = new System.Drawing.Size(343, 114);
+            this.grpPERSONAL.Size = new System.Drawing.Size(343, 150);
             this.grpPERSONAL.TabIndex = 4;
             this.grpPERSONAL.TabStop = false;
             this.grpPERSONAL.Text = "PERSONAL";
             // 
             // grpPERFIL
             // 
-            this.grpPERFIL.Controls.Add(this.textBox3);
-            this.grpPERFIL.Controls.Add(this.textBox2);
-            this.grpPERFIL.Controls.Add(this.textBox1);
+            this.grpPERFIL.Controls.Add(this.txtDESCPRIPCION);
+            this.grpPERFIL.Controls.Add(this.txtCORREO);
+            this.grpPERFIL.Controls.Add(this.txtNOMBREPERFIL);
             this.grpPERFIL.Controls.Add(this.label1);
             this.grpPERFIL.Controls.Add(this.label5);
             this.grpPERFIL.Controls.Add(this.label6);
@@ -270,47 +274,47 @@
             this.grpPERFIL.TabStop = false;
             this.grpPERFIL.Text = "PERFIL";
             // 
-            // textBox1
+            // txtNOMBREPERFIL
             // 
-            this.textBox1.Location = new System.Drawing.Point(162, 17);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(175, 20);
-            this.textBox1.TabIndex = 17;
+            this.txtNOMBREPERFIL.Location = new System.Drawing.Point(162, 17);
+            this.txtNOMBREPERFIL.Name = "txtNOMBREPERFIL";
+            this.txtNOMBREPERFIL.Size = new System.Drawing.Size(175, 20);
+            this.txtNOMBREPERFIL.TabIndex = 17;
             // 
-            // textBox2
+            // txtCORREO
             // 
-            this.textBox2.Location = new System.Drawing.Point(162, 52);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(175, 20);
-            this.textBox2.TabIndex = 18;
+            this.txtCORREO.Location = new System.Drawing.Point(162, 52);
+            this.txtCORREO.Name = "txtCORREO";
+            this.txtCORREO.Size = new System.Drawing.Size(175, 20);
+            this.txtCORREO.TabIndex = 18;
             // 
-            // textBox3
+            // txtDESCPRIPCION
             // 
-            this.textBox3.Location = new System.Drawing.Point(162, 78);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(175, 20);
-            this.textBox3.TabIndex = 19;
+            this.txtDESCPRIPCION.Location = new System.Drawing.Point(162, 78);
+            this.txtDESCPRIPCION.Name = "txtDESCPRIPCION";
+            this.txtDESCPRIPCION.Size = new System.Drawing.Size(175, 20);
+            this.txtDESCPRIPCION.TabIndex = 19;
             // 
-            // textBox4
+            // txtAPELLIDOPATERNO
             // 
-            this.textBox4.Location = new System.Drawing.Point(140, 13);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(175, 20);
-            this.textBox4.TabIndex = 20;
+            this.txtAPELLIDOPATERNO.Location = new System.Drawing.Point(140, 13);
+            this.txtAPELLIDOPATERNO.Name = "txtAPELLIDOPATERNO";
+            this.txtAPELLIDOPATERNO.Size = new System.Drawing.Size(175, 20);
+            this.txtAPELLIDOPATERNO.TabIndex = 20;
             // 
-            // textBox5
+            // txtAPELLIDOMATERNO
             // 
-            this.textBox5.Location = new System.Drawing.Point(140, 49);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(175, 20);
-            this.textBox5.TabIndex = 21;
+            this.txtAPELLIDOMATERNO.Location = new System.Drawing.Point(140, 49);
+            this.txtAPELLIDOMATERNO.Name = "txtAPELLIDOMATERNO";
+            this.txtAPELLIDOMATERNO.Size = new System.Drawing.Size(175, 20);
+            this.txtAPELLIDOMATERNO.TabIndex = 21;
             // 
-            // dateTimePicker1
+            // dtpNACIMIENTO
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(140, 85);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 22;
+            this.dtpNACIMIENTO.Location = new System.Drawing.Point(137, 116);
+            this.dtpNACIMIENTO.Name = "dtpNACIMIENTO";
+            this.dtpNACIMIENTO.Size = new System.Drawing.Size(200, 20);
+            this.dtpNACIMIENTO.TabIndex = 23;
             // 
             // timer1
             // 
@@ -320,17 +324,35 @@
             // 
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(62, 87);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(57, 13);
+            this.label7.TabIndex = 23;
+            this.label7.Text = "NOMBRE:";
+            // 
+            // txtNOMBRE
+            // 
+            this.txtNOMBRE.Location = new System.Drawing.Point(140, 84);
+            this.txtNOMBRE.Name = "txtNOMBRE";
+            this.txtNOMBRE.Size = new System.Drawing.Size(175, 20);
+            this.txtNOMBRE.TabIndex = 22;
+            // 
             // FormAGREGARUSUARIO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(738, 458);
+            this.ClientSize = new System.Drawing.Size(738, 486);
+            this.ControlBox = false;
             this.Controls.Add(this.btnSALIR);
             this.Controls.Add(this.btnBUSCAR);
             this.Controls.Add(this.picIMAGEN);
             this.Controls.Add(this.grpDATOS);
             this.Name = "FormAGREGARUSUARIO";
-            this.Text = "FormAGREGARUSUARIO";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "AGREGAR USUARIO";
             this.Load += new System.EventHandler(this.FormAGREGARUSUARIO_Load);
             this.grpDATOS.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picIMAGEN)).EndInit();
@@ -366,13 +388,15 @@
         private System.Windows.Forms.Label lblESTADO;
         private System.Windows.Forms.Label lblCIUDAD;
         private System.Windows.Forms.Button btnAGREGARUSUARIO;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox txtDESCPRIPCION;
+        private System.Windows.Forms.TextBox txtCORREO;
+        private System.Windows.Forms.TextBox txtNOMBREPERFIL;
+        private System.Windows.Forms.TextBox txtAPELLIDOMATERNO;
+        private System.Windows.Forms.TextBox txtAPELLIDOPATERNO;
+        private System.Windows.Forms.DateTimePicker dtpNACIMIENTO;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.TextBox txtNOMBRE;
+        private System.Windows.Forms.Label label7;
     }
 }

@@ -36,13 +36,15 @@
             this.grpUSUARIO = new System.Windows.Forms.GroupBox();
             this.lblMostarUsuario = new System.Windows.Forms.Label();
             this.lblMOSTARCONTRA = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.grpUSUARIO.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(471, 361);
+            this.btnSalir.Location = new System.Drawing.Point(806, 496);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 0;
@@ -52,7 +54,7 @@
             // 
             // btnAGREGARUSUARIO
             // 
-            this.btnAGREGARUSUARIO.Location = new System.Drawing.Point(471, 303);
+            this.btnAGREGARUSUARIO.Location = new System.Drawing.Point(806, 438);
             this.btnAGREGARUSUARIO.Name = "btnAGREGARUSUARIO";
             this.btnAGREGARUSUARIO.Size = new System.Drawing.Size(75, 42);
             this.btnAGREGARUSUARIO.TabIndex = 1;
@@ -63,7 +65,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 142);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 79);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(339, 242);
             this.dataGridView1.TabIndex = 2;
@@ -92,7 +94,7 @@
             this.grpUSUARIO.Controls.Add(this.lblMostarUsuario);
             this.grpUSUARIO.Controls.Add(this.lblUsuario);
             this.grpUSUARIO.Controls.Add(this.lblContra);
-            this.grpUSUARIO.Location = new System.Drawing.Point(368, 12);
+            this.grpUSUARIO.Location = new System.Drawing.Point(12, 12);
             this.grpUSUARIO.Name = "grpUSUARIO";
             this.grpUSUARIO.Size = new System.Drawing.Size(178, 61);
             this.grpUSUARIO.TabIndex = 5;
@@ -117,12 +119,21 @@
             this.lblMOSTARCONTRA.TabIndex = 6;
             this.lblMOSTARCONTRA.Text = "label2";
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(374, 79);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(507, 242);
+            this.dataGridView2.TabIndex = 6;
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(558, 396);
+            this.ClientSize = new System.Drawing.Size(893, 526);
             this.ControlBox = false;
+            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.grpUSUARIO);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnAGREGARUSUARIO);
@@ -134,6 +145,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.grpUSUARIO.ResumeLayout(false);
             this.grpUSUARIO.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -148,5 +160,6 @@
         private System.Windows.Forms.GroupBox grpUSUARIO;
         private System.Windows.Forms.Label lblMOSTARCONTRA;
         private System.Windows.Forms.Label lblMostarUsuario;
+        public System.Windows.Forms.DataGridView dataGridView2;
     }
 }

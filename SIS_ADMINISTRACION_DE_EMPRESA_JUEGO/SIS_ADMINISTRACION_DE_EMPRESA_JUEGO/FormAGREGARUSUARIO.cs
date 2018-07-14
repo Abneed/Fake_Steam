@@ -13,6 +13,7 @@ namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
 {
     public partial class FormAGREGARUSUARIO : Form
     {
+        
         public string imgLoc = "C:\\Users\\Angel\\Pictures\\Usuario.jpg";
         frmPrincipal miprincipal = new frmPrincipal();
         public string CONTRA = "";
@@ -38,6 +39,7 @@ namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
                 {
                     imgLoc = DLG.FileName.ToString();
                     picIMAGEN.ImageLocation = imgLoc;
+                    
                 }
             }
             catch (Exception EX)
@@ -50,6 +52,7 @@ namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
         private void FormAGREGARUSUARIO_Load(object sender, EventArgs e)
         {
             picIMAGEN.ImageLocation = imgLoc;
+           
             try
             {
 
@@ -117,16 +120,43 @@ namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
 
         private void btnAGREGARUSUARIO_Click(object sender, EventArgs e)
         {
-            /* SqlCommand comando = new SqlCommand("AGREGAR_HOSPEDAJES");
+            try
+            {
+                CONEXIONBD.Servidor = "ANGEL-PC\\SQLEXPRESS"; //ANGEL - PC\SQLEXPRESS
+                CONEXIONBD.Base_Datos = "FAKE_STEAM";
+                CONEXIONBD.Usuario = this.USAURIO;
+                CONEXIONBD.Contraseña = this.CONTRA;
+                CONEXIONBD DB = new CONEXIONBD();     
+                SqlCommand comando = new SqlCommand("AGREGAR_USUARIO2");
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@HABITACION", cbHabitacion.Text);
-                comando.Parameters.AddWithValue("@RESERVA", cbCliente.Text);
-                
-                BD.AbrirConexion();
-                BD.EjecutarComando(comando);
-                BD.CerrarConexion();
-                MostrarDatosEnDGVRESERVAS2();
-                MessageBox.Show("Se ha agregado un nuevo Hospedaje.", "Registro de Hospedaje");*/
+                comando.Parameters.AddWithValue("@NOMBREDELPERFIL",txtNOMBREPERFIL.Text);
+                comando.Parameters.AddWithValue("@APPATERNO", txtAPELLIDOPATERNO.Text);
+                comando.Parameters.AddWithValue("@APMATERNO", txtAPELLIDOMATERNO.Text);
+                comando.Parameters.AddWithValue("@NOMBRE", txtNOMBRE.Text);
+                comando.Parameters.AddWithValue("@FECHANACIMIENTO", dtpNACIMIENTO.Value.Month+"-"+dtpNACIMIENTO.Value.Day+"-"+dtpNACIMIENTO.Value.Year); //"2007/12/1"
+                comando.Parameters.AddWithValue("@CORREO", txtCORREO.Text);
+                comando.Parameters.AddWithValue("@DESCRIPCION", txtDESCPRIPCION.Text);
+                comando.Parameters.AddWithValue("@PAIS", cmbPAIS.Text);
+                comando.Parameters.AddWithValue("@ESTADO", cmbESTADO.Text);
+                comando.Parameters.AddWithValue("@CIUDAD", cmbCIUDAD.Text);                
+                comando.Parameters.AddWithValue("@UBICACIONIMAGEN", picIMAGEN.ImageLocation.ToString());
+                DB.AbrirConexion();
+                DB.EjecutarComando(comando);
+                DB.CerrarConexion();
+
+                MessageBox.Show("SE AGREGO UN NUEVO USUARIO");
+                this.LimpiarDatos();
+
+
+
+            }
+            catch (Exception EX)
+            {
+                MessageBox.Show(EX.Message);
+                return;
+            }
+            
+           
 
 
 
@@ -155,6 +185,28 @@ namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
             }
             timer1.Stop();
             timer2.Stop();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           MessageBox.Show(dtpNACIMIENTO.Value.Month + "-" + dtpNACIMIENTO.Value.Day + "-" + dtpNACIMIENTO.Value.Year);
+        }
+        public void LimpiarDatos()  //Metodo local que limpia los datos
+        {
+
+           // foreach (Control x in grpDatos.Controls)
+             //   if (x is TextBox)
+               //     x.Text = "";
+            foreach (Control x in grpPERFIL.Controls)
+                if (x is TextBox)
+                    x.Text = "";
+            foreach (Control x in grpPERSONAL.Controls)
+                if (x is TextBox)
+                    x.Text = "";
+            foreach (Control x in grpPERSONAL.Controls)
+                if (x is TextBox)
+                    x.Text = "";
+
         }
     }
 }
