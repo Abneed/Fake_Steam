@@ -54,7 +54,7 @@
             // 
             // btnAGREGARUSUARIO
             // 
-            this.btnAGREGARUSUARIO.Location = new System.Drawing.Point(806, 438);
+            this.btnAGREGARUSUARIO.Location = new System.Drawing.Point(806, 448);
             this.btnAGREGARUSUARIO.Name = "btnAGREGARUSUARIO";
             this.btnAGREGARUSUARIO.Size = new System.Drawing.Size(75, 42);
             this.btnAGREGARUSUARIO.TabIndex = 1;
@@ -96,7 +96,7 @@
             this.grpUSUARIO.Controls.Add(this.lblContra);
             this.grpUSUARIO.Location = new System.Drawing.Point(12, 12);
             this.grpUSUARIO.Name = "grpUSUARIO";
-            this.grpUSUARIO.Size = new System.Drawing.Size(178, 61);
+            this.grpUSUARIO.Size = new System.Drawing.Size(150, 61);
             this.grpUSUARIO.TabIndex = 5;
             this.grpUSUARIO.TabStop = false;
             this.grpUSUARIO.Text = "Usuario";
@@ -118,6 +118,7 @@
             this.lblMOSTARCONTRA.Size = new System.Drawing.Size(35, 13);
             this.lblMOSTARCONTRA.TabIndex = 6;
             this.lblMOSTARCONTRA.Text = "label2";
+            this.lblMOSTARCONTRA.Visible = false;
             // 
             // dataGridView2
             // 
