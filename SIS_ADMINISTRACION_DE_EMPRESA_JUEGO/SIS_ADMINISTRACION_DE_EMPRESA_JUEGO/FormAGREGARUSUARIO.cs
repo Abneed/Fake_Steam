@@ -221,6 +221,9 @@ namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
             {
                 grpDATOS.Visible = true;
                 grpEliminar.Visible = false;
+                btnAGREGARUSUARIO.Visible = true;
+                btnACTUALIZARUSUARIO.Visible = false;
+                grpActualizar.Visible = false;
             }
         }
 
@@ -256,6 +259,77 @@ namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
                 return;
             }
             tmrEliminar.Stop();
+        }
+
+        private void radActualizar_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radActualizar.Checked==true)
+            {
+                grpEliminar.Visible = false;
+                btnAGREGARUSUARIO.Visible = false;
+                btnACTUALIZARUSUARIO.Visible = true;
+                grpDATOS.Visible = true;
+                grpActualizar.Visible = true;
+                tmrActualizar.Start();
+            }
+        }
+
+        private void btnBuscarDatos_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CONEXIONBD.Servidor = SERVIDOR; //ANGEL - PC\SQLEXPRESS
+                CONEXIONBD.Base_Datos = "FAKE_STEAM";
+                CONEXIONBD.Usuario = this.USAURIO;
+                CONEXIONBD.Contraseña = this.CONTRA;
+                CONEXIONBD DB = new CONEXIONBD();
+                DB.Conectar();
+                string cadena = "select US.NOMBREPERFIL,US.APPATERNO,US.APMATERNO,US.NOMBRE,US.FECHANACIMIENTO,US.CORREOELECTRONICO,US.DESCRIPCION,PA.IDPAIS AS PAIS,EST.IDESTADO AS ESTADO,CIU.IDCIUDAD AS CIUDAD,IM.UBICACIONIMAGEN from USUARIOS AS US JOIN PAIS AS PA ON(PA.IDPAIS=US.IDPAIS) JOIN ESTADO AS EST ON(EST.IDESTADO=US.IDESTADO) JOIN CIUDAD AS CIU ON(CIU.IDCIUDAD=US.IDCIUDAD) JOIN IMAGENES AS IM  ON(IM.IDIMAGEN=US.IDIMAGEN) where US.NOMBREPERFIL=" + "'"+cmbSeleccionarUsuario.Text+"'";
+                DataTable NUEVO = new DataTable();
+                NUEVO = DB.EjecutarConsulta(new SqlCommand(cadena));
+                DB.CerrarConexion();
+                txtNOMBREPERFIL.Text = NUEVO.Rows[0]["NOMBREPERFIL"].ToString();
+                txtAPELLIDOPATERNO.Text= NUEVO.Rows[0]["APPATERNO"].ToString();
+                txtAPELLIDOMATERNO.Text= NUEVO.Rows[0]["APMATERNO"].ToString();
+                txtNOMBRE.Text= NUEVO.Rows[0]["NOMBRE"].ToString();
+                dtpNACIMIENTO.Value= DateTime.Parse( NUEVO.Rows[0]["FECHANACIMIENTO"].ToString());
+                txtCORREO.Text= NUEVO.Rows[0]["CORREOELECTRONICO"].ToString();
+               txtDESCPRIPCION.Text= NUEVO.Rows[0]["DESCRIPCION"].ToString();
+                cmbPAIS.SelectedIndex= int.Parse(NUEVO.Rows[0]["PAIS"].ToString())-1;
+                cmbESTADO.SelectedIndex = int.Parse(NUEVO.Rows[0]["ESTADO"].ToString())-1;
+                cmbCIUDAD.SelectedIndex= int.Parse(NUEVO.Rows[0]["CIUDAD"].ToString())-1;
+
+            }
+            catch (Exception EX)
+            {
+                MessageBox.Show(EX.Message);
+                return;
+            }
+            
+        }
+
+        private void tmrActualizar_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                CONEXIONBD.Servidor = SERVIDOR; //ANGEL - PC\SQLEXPRESS
+                CONEXIONBD.Base_Datos = "FAKE_STEAM";
+                CONEXIONBD.Usuario = this.USAURIO;
+                CONEXIONBD.Contraseña = this.CONTRA;
+                CONEXIONBD DB = new CONEXIONBD();
+                DB.Conectar();
+                string cadena = " SELECT NOMBREPERFIL  FROM USUARIOS";
+                cmbSeleccionarUsuario.DisplayMember = "NOMBREPERFIL";
+                cmbSeleccionarUsuario.DataSource = DB.EjecutarConsulta(new SqlCommand(cadena));
+                DB.CerrarConexion();
+
+            }
+            catch (Exception EX)
+            {
+                MessageBox.Show(EX.Message);
+                return;
+            }
+            tmrActualizar.Stop();
         }
     }
 }

@@ -67,6 +67,13 @@
             this.cmbPerfiles = new System.Windows.Forms.ComboBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.tmrEliminar = new System.Windows.Forms.Timer(this.components);
+            this.radActualizar = new System.Windows.Forms.RadioButton();
+            this.cmbSeleccionarUsuario = new System.Windows.Forms.ComboBox();
+            this.lblSELECCIONARUSUARIO = new System.Windows.Forms.Label();
+            this.btnBuscarDatos = new System.Windows.Forms.Button();
+            this.btnACTUALIZARUSUARIO = new System.Windows.Forms.Button();
+            this.grpActualizar = new System.Windows.Forms.GroupBox();
+            this.tmrActualizar = new System.Windows.Forms.Timer(this.components);
             this.grpDATOS.SuspendLayout();
             this.grpPERFIL.SuspendLayout();
             this.grpPERSONAL.SuspendLayout();
@@ -74,17 +81,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.picIMAGEN)).BeginInit();
             this.grpEliminar.SuspendLayout();
             this.grpSeleccionar.SuspendLayout();
+            this.grpActualizar.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpDATOS
             // 
+            this.grpDATOS.Controls.Add(this.grpActualizar);
+            this.grpDATOS.Controls.Add(this.btnACTUALIZARUSUARIO);
             this.grpDATOS.Controls.Add(this.grpPERFIL);
             this.grpDATOS.Controls.Add(this.grpPERSONAL);
             this.grpDATOS.Controls.Add(this.groupBox1);
             this.grpDATOS.Controls.Add(this.btnAGREGARUSUARIO);
-            this.grpDATOS.Location = new System.Drawing.Point(12, 52);
+            this.grpDATOS.Location = new System.Drawing.Point(12, 57);
             this.grpDATOS.Name = "grpDATOS";
-            this.grpDATOS.Size = new System.Drawing.Size(379, 454);
+            this.grpDATOS.Size = new System.Drawing.Size(379, 535);
             this.grpDATOS.TabIndex = 0;
             this.grpDATOS.TabStop = false;
             this.grpDATOS.Text = "DATOS:";
@@ -97,7 +107,7 @@
             this.grpPERFIL.Controls.Add(this.label1);
             this.grpPERFIL.Controls.Add(this.label5);
             this.grpPERFIL.Controls.Add(this.label6);
-            this.grpPERFIL.Location = new System.Drawing.Point(16, 19);
+            this.grpPERFIL.Location = new System.Drawing.Point(16, 99);
             this.grpPERFIL.Name = "grpPERFIL";
             this.grpPERFIL.Size = new System.Drawing.Size(343, 109);
             this.grpPERFIL.TabIndex = 4;
@@ -162,7 +172,7 @@
             this.grpPERSONAL.Controls.Add(this.label2);
             this.grpPERSONAL.Controls.Add(this.label3);
             this.grpPERSONAL.Controls.Add(this.label4);
-            this.grpPERSONAL.Location = new System.Drawing.Point(16, 134);
+            this.grpPERSONAL.Location = new System.Drawing.Point(16, 214);
             this.grpPERSONAL.Name = "grpPERSONAL";
             this.grpPERSONAL.Size = new System.Drawing.Size(343, 150);
             this.grpPERSONAL.TabIndex = 4;
@@ -241,7 +251,7 @@
             this.groupBox1.Controls.Add(this.cmbCIUDAD);
             this.groupBox1.Controls.Add(this.lblESTADO);
             this.groupBox1.Controls.Add(this.lblCIUDAD);
-            this.groupBox1.Location = new System.Drawing.Point(16, 290);
+            this.groupBox1.Location = new System.Drawing.Point(16, 370);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(343, 116);
             this.groupBox1.TabIndex = 4;
@@ -303,7 +313,7 @@
             // 
             // btnAGREGARUSUARIO
             // 
-            this.btnAGREGARUSUARIO.Location = new System.Drawing.Point(298, 412);
+            this.btnAGREGARUSUARIO.Location = new System.Drawing.Point(299, 493);
             this.btnAGREGARUSUARIO.Name = "btnAGREGARUSUARIO";
             this.btnAGREGARUSUARIO.Size = new System.Drawing.Size(74, 36);
             this.btnAGREGARUSUARIO.TabIndex = 4;
@@ -333,7 +343,7 @@
             // 
             // btnSALIR
             // 
-            this.btnSALIR.Location = new System.Drawing.Point(655, 439);
+            this.btnSALIR.Location = new System.Drawing.Point(650, 550);
             this.btnSALIR.Name = "btnSALIR";
             this.btnSALIR.Size = new System.Drawing.Size(76, 42);
             this.btnSALIR.TabIndex = 3;
@@ -355,7 +365,7 @@
             this.grpEliminar.Controls.Add(this.cmbPerfiles);
             this.grpEliminar.Location = new System.Drawing.Point(433, 381);
             this.grpEliminar.Name = "grpEliminar";
-            this.grpEliminar.Size = new System.Drawing.Size(200, 87);
+            this.grpEliminar.Size = new System.Drawing.Size(200, 77);
             this.grpEliminar.TabIndex = 4;
             this.grpEliminar.TabStop = false;
             this.grpEliminar.Text = "ELIMINAR USUARIO";
@@ -374,11 +384,12 @@
             // 
             // grpSeleccionar
             // 
+            this.grpSeleccionar.Controls.Add(this.radActualizar);
             this.grpSeleccionar.Controls.Add(this.radEliminar);
             this.grpSeleccionar.Controls.Add(this.radAgregar);
-            this.grpSeleccionar.Location = new System.Drawing.Point(116, 3);
+            this.grpSeleccionar.Location = new System.Drawing.Point(43, 3);
             this.grpSeleccionar.Name = "grpSeleccionar";
-            this.grpSeleccionar.Size = new System.Drawing.Size(227, 48);
+            this.grpSeleccionar.Size = new System.Drawing.Size(300, 48);
             this.grpSeleccionar.TabIndex = 24;
             this.grpSeleccionar.TabStop = false;
             this.grpSeleccionar.Text = "SELECCIONAR";
@@ -387,7 +398,7 @@
             // radEliminar
             // 
             this.radEliminar.AutoSize = true;
-            this.radEliminar.Location = new System.Drawing.Point(122, 19);
+            this.radEliminar.Location = new System.Drawing.Point(90, 19);
             this.radEliminar.Name = "radEliminar";
             this.radEliminar.Size = new System.Drawing.Size(76, 17);
             this.radEliminar.TabIndex = 6;
@@ -406,7 +417,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(119, 54);
+            this.btnEliminar.Location = new System.Drawing.Point(57, 46);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 1;
@@ -417,11 +428,75 @@
             // 
             this.tmrEliminar.Tick += new System.EventHandler(this.tmrEliminar_Tick);
             // 
+            // radActualizar
+            // 
+            this.radActualizar.AutoSize = true;
+            this.radActualizar.Location = new System.Drawing.Point(172, 19);
+            this.radActualizar.Name = "radActualizar";
+            this.radActualizar.Size = new System.Drawing.Size(92, 17);
+            this.radActualizar.TabIndex = 7;
+            this.radActualizar.TabStop = true;
+            this.radActualizar.Text = "ACTUALIZAR";
+            this.radActualizar.UseVisualStyleBackColor = true;
+            this.radActualizar.CheckedChanged += new System.EventHandler(this.radActualizar_CheckedChanged);
+            // 
+            // cmbSeleccionarUsuario
+            // 
+            this.cmbSeleccionarUsuario.FormattingEnabled = true;
+            this.cmbSeleccionarUsuario.Location = new System.Drawing.Point(144, 25);
+            this.cmbSeleccionarUsuario.Name = "cmbSeleccionarUsuario";
+            this.cmbSeleccionarUsuario.Size = new System.Drawing.Size(193, 21);
+            this.cmbSeleccionarUsuario.TabIndex = 5;
+            // 
+            // lblSELECCIONARUSUARIO
+            // 
+            this.lblSELECCIONARUSUARIO.AutoSize = true;
+            this.lblSELECCIONARUSUARIO.Location = new System.Drawing.Point(-3, 28);
+            this.lblSELECCIONARUSUARIO.Name = "lblSELECCIONARUSUARIO";
+            this.lblSELECCIONARUSUARIO.Size = new System.Drawing.Size(137, 13);
+            this.lblSELECCIONARUSUARIO.TabIndex = 6;
+            this.lblSELECCIONARUSUARIO.Text = "SELECCIONAR USUARIO:";
+            // 
+            // btnBuscarDatos
+            // 
+            this.btnBuscarDatos.Location = new System.Drawing.Point(144, 52);
+            this.btnBuscarDatos.Name = "btnBuscarDatos";
+            this.btnBuscarDatos.Size = new System.Drawing.Size(117, 23);
+            this.btnBuscarDatos.TabIndex = 7;
+            this.btnBuscarDatos.Text = "buscar datos";
+            this.btnBuscarDatos.UseVisualStyleBackColor = true;
+            this.btnBuscarDatos.Click += new System.EventHandler(this.btnBuscarDatos_Click);
+            // 
+            // btnACTUALIZARUSUARIO
+            // 
+            this.btnACTUALIZARUSUARIO.Location = new System.Drawing.Point(203, 493);
+            this.btnACTUALIZARUSUARIO.Name = "btnACTUALIZARUSUARIO";
+            this.btnACTUALIZARUSUARIO.Size = new System.Drawing.Size(90, 36);
+            this.btnACTUALIZARUSUARIO.TabIndex = 8;
+            this.btnACTUALIZARUSUARIO.Text = "&ACTUALIZAR USUARIO";
+            this.btnACTUALIZARUSUARIO.UseVisualStyleBackColor = true;
+            // 
+            // grpActualizar
+            // 
+            this.grpActualizar.Controls.Add(this.lblSELECCIONARUSUARIO);
+            this.grpActualizar.Controls.Add(this.btnBuscarDatos);
+            this.grpActualizar.Controls.Add(this.cmbSeleccionarUsuario);
+            this.grpActualizar.Location = new System.Drawing.Point(16, 19);
+            this.grpActualizar.Name = "grpActualizar";
+            this.grpActualizar.Size = new System.Drawing.Size(343, 77);
+            this.grpActualizar.TabIndex = 25;
+            this.grpActualizar.TabStop = false;
+            this.grpActualizar.Text = "ACTUALIZAR";
+            // 
+            // tmrActualizar
+            // 
+            this.tmrActualizar.Tick += new System.EventHandler(this.tmrActualizar_Tick);
+            // 
             // FormAGREGARUSUARIO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(738, 518);
+            this.ClientSize = new System.Drawing.Size(738, 604);
             this.ControlBox = false;
             this.Controls.Add(this.grpSeleccionar);
             this.Controls.Add(this.grpEliminar);
@@ -444,6 +519,8 @@
             this.grpEliminar.ResumeLayout(false);
             this.grpSeleccionar.ResumeLayout(false);
             this.grpSeleccionar.PerformLayout();
+            this.grpActualizar.ResumeLayout(false);
+            this.grpActualizar.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -487,5 +564,12 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.ComboBox cmbPerfiles;
         private System.Windows.Forms.Timer tmrEliminar;
+        private System.Windows.Forms.RadioButton radActualizar;
+        private System.Windows.Forms.Label lblSELECCIONARUSUARIO;
+        private System.Windows.Forms.ComboBox cmbSeleccionarUsuario;
+        private System.Windows.Forms.Button btnBuscarDatos;
+        private System.Windows.Forms.Button btnACTUALIZARUSUARIO;
+        private System.Windows.Forms.GroupBox grpActualizar;
+        private System.Windows.Forms.Timer tmrActualizar;
     }
 }
