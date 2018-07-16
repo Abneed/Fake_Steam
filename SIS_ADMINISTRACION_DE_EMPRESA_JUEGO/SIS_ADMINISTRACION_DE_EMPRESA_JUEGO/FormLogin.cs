@@ -13,7 +13,8 @@ namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
 {
     public partial class FormLogin : Form
     {
-        
+
+        public string SERVIDOR = "ANGEL-PC\\SQLEXPRESS";
         public FormLogin()
         {
             InitializeComponent();
@@ -35,8 +36,8 @@ namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
             try
             {
 
-           
-            CONEXIONBD.Servidor = "ANGEL-PC\\SQLEXPRESS"; //ANGEL - PC\SQLEXPRESS
+               
+            CONEXIONBD.Servidor = SERVIDOR; //ANGEL - PC\SQLEXPRESS
             CONEXIONBD.Base_Datos = "FAKE_STEAM";
             CONEXIONBD.Usuario =   txtUsuario.Text;
             CONEXIONBD.Contraseña = txtContra.Text;
@@ -49,6 +50,7 @@ namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
             frmPrin.dataGridView2.DataSource = DB.EjecutarConsulta(new SqlCommand("SELECT * FROM USUARIOS"));
                 frmPrin.USUARIO = txtUsuario.Text;
                 frmPrin.CONTRA = txtContra.Text;
+                frmPrin.BASE = this.SERVIDOR;
             frmPrin.Show();
             this.Visible = false;
                 DB.CerrarConexion();

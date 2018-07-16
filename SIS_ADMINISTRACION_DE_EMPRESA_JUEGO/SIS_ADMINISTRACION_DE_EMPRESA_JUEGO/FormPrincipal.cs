@@ -14,6 +14,8 @@ namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
     {
         public string USUARIO = "";
         public string CONTRA = "";
+        public string BASE = "";
+        
         public frmPrincipal()
         {
             InitializeComponent();
@@ -35,6 +37,7 @@ namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
             FormAGREGARUSUARIO FRMUSUARIO = new FormAGREGARUSUARIO();
             FRMUSUARIO.CONTRA = this.CONTRA;
             FRMUSUARIO.USAURIO = this.USUARIO;
+            FRMUSUARIO.SERVIDOR = this.BASE;
             FRMUSUARIO.Show();
             //this.Visible = false;
         }

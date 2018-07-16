@@ -18,6 +18,7 @@ namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
         frmPrincipal miprincipal = new frmPrincipal();
         public string CONTRA = "";
          public string USAURIO = "";
+        public string SERVIDOR = "";
         public FormAGREGARUSUARIO()
         {
             InitializeComponent();
@@ -52,12 +53,12 @@ namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
         private void FormAGREGARUSUARIO_Load(object sender, EventArgs e)
         {
             picIMAGEN.ImageLocation = imgLoc;
-           
+            radAgregar.Checked = true;
             try
             {
 
            
-            CONEXIONBD.Servidor = "ANGEL-PC\\SQLEXPRESS"; //ANGEL - PC\SQLEXPRESS
+            CONEXIONBD.Servidor = SERVIDOR; //ANGEL - PC\SQLEXPRESS
             CONEXIONBD.Base_Datos = "FAKE_STEAM";
             CONEXIONBD.Usuario = this.USAURIO;
             CONEXIONBD.Contraseña = this.CONTRA;
@@ -97,7 +98,7 @@ namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
         {
             try
             {
-                CONEXIONBD.Servidor = "ANGEL-PC\\SQLEXPRESS"; //ANGEL - PC\SQLEXPRESS
+                CONEXIONBD.Servidor = SERVIDOR; //ANGEL - PC\SQLEXPRESS
                 CONEXIONBD.Base_Datos = "FAKE_STEAM";
                 CONEXIONBD.Usuario = this.USAURIO;
                 CONEXIONBD.Contraseña = this.CONTRA;
@@ -122,7 +123,7 @@ namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
         {
             try
             {
-                CONEXIONBD.Servidor = "ANGEL-PC\\SQLEXPRESS"; //ANGEL - PC\SQLEXPRESS
+                CONEXIONBD.Servidor = SERVIDOR; //ANGEL - PC\SQLEXPRESS
                 CONEXIONBD.Base_Datos = "FAKE_STEAM";
                 CONEXIONBD.Usuario = this.USAURIO;
                 CONEXIONBD.Contraseña = this.CONTRA;
@@ -166,7 +167,7 @@ namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
         {
             try
             {
-                CONEXIONBD.Servidor = "ANGEL-PC\\SQLEXPRESS"; //ANGEL - PC\SQLEXPRESS
+                CONEXIONBD.Servidor = SERVIDOR; //ANGEL - PC\SQLEXPRESS
                 CONEXIONBD.Base_Datos = "FAKE_STEAM";
                 CONEXIONBD.Usuario = this.USAURIO;
                 CONEXIONBD.Contraseña = this.CONTRA;
@@ -207,6 +208,54 @@ namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
                 if (x is TextBox)
                     x.Text = "";
 
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radAgregar_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radAgregar.Checked==true)
+            {
+                grpDATOS.Visible = true;
+                grpEliminar.Visible = false;
+            }
+        }
+
+        private void radEliminar_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radEliminar.Checked==true)
+            {
+                grpDATOS.Visible = false;
+                grpEliminar.Visible = true;
+                tmrEliminar.Start();
+            }
+        }
+
+        private void tmrEliminar_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                CONEXIONBD.Servidor = SERVIDOR; //ANGEL - PC\SQLEXPRESS
+                CONEXIONBD.Base_Datos = "FAKE_STEAM";
+                CONEXIONBD.Usuario = this.USAURIO;
+                CONEXIONBD.Contraseña = this.CONTRA;
+                CONEXIONBD DB = new CONEXIONBD();
+                DB.Conectar();
+                string cadena = " SELECT NOMBREPERFIL  FROM USUARIOS";
+                cmbPerfiles.DisplayMember = "NOMBREPERFIL";
+                cmbPerfiles.DataSource = DB.EjecutarConsulta(new SqlCommand(cadena));
+                DB.CerrarConexion();
+
+            }
+            catch (Exception EX)
+            {
+                MessageBox.Show(EX.Message);
+                return;
+            }
+            tmrEliminar.Stop();
         }
     }
 }
