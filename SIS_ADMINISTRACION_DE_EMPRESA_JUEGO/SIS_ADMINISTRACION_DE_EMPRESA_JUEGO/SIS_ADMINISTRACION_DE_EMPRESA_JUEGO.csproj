@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CONEXIONBD.cs" />
+    <Compile Include="FormBajasUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBajasUsuarios.Designer.cs">
+      <DependentUpon>FormBajasUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
