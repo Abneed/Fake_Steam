@@ -224,7 +224,13 @@ namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
                 btnAGREGARUSUARIO.Visible = true;
                 btnACTUALIZARUSUARIO.Visible = false;
                 grpActualizar.Visible = false;
+                grpUbicacion.Visible = true;
+                grpMOSTARUBICACION.Visible = false;
+                chkUBICACION.Visible = false;
+                grpIDUsuario.Visible = false;
+
             }
+            
         }
 
         private void radEliminar_CheckedChanged(object sender, EventArgs e)
@@ -234,6 +240,7 @@ namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
                 grpDATOS.Visible = false;
                 grpEliminar.Visible = true;
                 tmrEliminar.Start();
+                grpIDUsuario.Visible = false;
             }
         }
 
@@ -271,6 +278,11 @@ namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
                 grpDATOS.Visible = true;
                 grpActualizar.Visible = true;
                 tmrActualizar.Start();
+                grpUbicacion.Visible = false;
+                grpMOSTARUBICACION.Visible = true;
+                chkUBICACION.Visible = true;
+                grpIDUsuario.Visible = true;
+
             }
         }
 
@@ -284,7 +296,7 @@ namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
                 CONEXIONBD.Contraseña = this.CONTRA;
                 CONEXIONBD DB = new CONEXIONBD();
                 DB.Conectar();
-                string cadena = "select US.NOMBREPERFIL,US.APPATERNO,US.APMATERNO,US.NOMBRE,US.FECHANACIMIENTO,US.CORREOELECTRONICO,US.DESCRIPCION,PA.IDPAIS AS PAIS,EST.IDESTADO AS ESTADO,CIU.IDCIUDAD AS CIUDAD,IM.UBICACIONIMAGEN from USUARIOS AS US JOIN PAIS AS PA ON(PA.IDPAIS=US.IDPAIS) JOIN ESTADO AS EST ON(EST.IDESTADO=US.IDESTADO) JOIN CIUDAD AS CIU ON(CIU.IDCIUDAD=US.IDCIUDAD) JOIN IMAGENES AS IM  ON(IM.IDIMAGEN=US.IDIMAGEN) where US.NOMBREPERFIL=" + "'"+cmbSeleccionarUsuario.Text+"'";
+                string cadena = "select US.NOMBREPERFIL,US.APPATERNO,US.APMATERNO,US.NOMBRE,US.FECHANACIMIENTO,US.CORREOELECTRONICO,US.DESCRIPCION,PA.NOMBRE AS PAIS,EST.NOMBRE AS ESTADO,CIU.NOMBRE AS CIUDAD,IM.UBICACIONIMAGEN,US.IDUSUARIO from USUARIOS AS US JOIN PAIS AS PA ON(PA.IDPAIS=US.IDPAIS) JOIN ESTADO AS EST ON(EST.IDESTADO=US.IDESTADO) JOIN CIUDAD AS CIU ON(CIU.IDCIUDAD=US.IDCIUDAD) JOIN IMAGENES AS IM  ON(IM.IDIMAGEN=US.IDIMAGEN) where US.NOMBREPERFIL=" + "'"+cmbSeleccionarUsuario.Text+"'";
                 DataTable NUEVO = new DataTable();
                 NUEVO = DB.EjecutarConsulta(new SqlCommand(cadena));
                 DB.CerrarConexion();
@@ -295,10 +307,22 @@ namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
                 dtpNACIMIENTO.Value= DateTime.Parse( NUEVO.Rows[0]["FECHANACIMIENTO"].ToString());
                 txtCORREO.Text= NUEVO.Rows[0]["CORREOELECTRONICO"].ToString();
                txtDESCPRIPCION.Text= NUEVO.Rows[0]["DESCRIPCION"].ToString();
-                cmbPAIS.SelectedIndex= int.Parse(NUEVO.Rows[0]["PAIS"].ToString())-1;
-                cmbESTADO.SelectedIndex = int.Parse(NUEVO.Rows[0]["ESTADO"].ToString())-1;
-                cmbCIUDAD.SelectedIndex= int.Parse(NUEVO.Rows[0]["CIUDAD"].ToString())-1;
 
+                /*int index = cmbPAIS.FindString(NUEVO.Rows[0]["PAIS"].ToString());
+                cmbPAIS.SelectedIndex = index;*/
+                lblMostrarPais.Text = NUEVO.Rows[0]["PAIS"].ToString();
+                //cmbPAIS.SelectedIndex= int.Parse(NUEVO.Rows[0]["PAIS"].ToString())-1;
+                /*index = cmbESTADO.FindString(NUEVO.Rows[0]["ESTADO"].ToString());
+                cmbESTADO.SelectedIndex = index;//int.Parse(NUEVO.Rows[0]["ESTADO"].ToString())-1;*/
+               lblMostrarEstado.Text = NUEVO.Rows[0]["ESTADO"].ToString();
+                /* index = cmbESTADO.FindString(NUEVO.Rows[0]["CIUDAD"].ToString());
+                 cmbCIUDAD.SelectedIndex = index; //int.Parse(NUEVO.Rows[0]["CIUDAD"].ToString())-1;*/
+               lblMostrarCiudad.Text = NUEVO.Rows[0]["CIUDAD"].ToString();
+
+                picIMAGEN.ImageLocation= NUEVO.Rows[0]["UBICACIONIMAGEN"].ToString();
+                lblMOSTARIDUSUARIO.Text= NUEVO.Rows[0]["IDUSUARIO"].ToString();
+                picIMAGEN.Refresh();
+                
             }
             catch (Exception EX)
             {
@@ -330,6 +354,104 @@ namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
                 return;
             }
             tmrActualizar.Stop();
+        }
+
+        private void chkUBICACION_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkUBICACION.Checked==true)
+            {
+                grpUbicacion.Visible = true;
+            }
+            else
+            {
+                grpUbicacion.Visible = false;
+            }
+        }
+
+        private void btnACTUALIZARUSUARIO_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CONEXIONBD.Servidor = SERVIDOR; //ANGEL - PC\SQLEXPRESS
+                CONEXIONBD.Base_Datos = "FAKE_STEAM";
+                CONEXIONBD.Usuario = this.USAURIO;
+                CONEXIONBD.Contraseña = this.CONTRA;
+                CONEXIONBD DB = new CONEXIONBD();
+                SqlCommand comando = new SqlCommand("MODIFICAR_USUARIO2");
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@NOMBREDELPERFIL", txtNOMBREPERFIL.Text);
+                comando.Parameters.AddWithValue("@APPATERNO", txtAPELLIDOPATERNO.Text);
+                comando.Parameters.AddWithValue("@APMATERNO", txtAPELLIDOMATERNO.Text);
+                comando.Parameters.AddWithValue("@NOMBRE", txtNOMBRE.Text);
+                comando.Parameters.AddWithValue("@FECHANACIMIENTO", dtpNACIMIENTO.Value.Month + "-" + dtpNACIMIENTO.Value.Day + "-" + dtpNACIMIENTO.Value.Year); //"2007/12/1"
+                comando.Parameters.AddWithValue("@CORREO", txtCORREO.Text);
+                comando.Parameters.AddWithValue("@DESCRIPCION", txtDESCPRIPCION.Text);
+                if (chkUBICACION.Checked==true)
+                {
+                    comando.Parameters.AddWithValue("@PAIS", cmbPAIS.Text);
+                    comando.Parameters.AddWithValue("@ESTADO", cmbESTADO.Text);
+                    comando.Parameters.AddWithValue("@CIUDAD", cmbCIUDAD.Text);
+                }
+                else
+                {
+                    comando.Parameters.AddWithValue("@PAIS", lblMostrarPais.Text);
+                    comando.Parameters.AddWithValue("@ESTADO", lblMostrarEstado.Text);
+                    comando.Parameters.AddWithValue("@CIUDAD", lblMostrarCiudad.Text);
+                }                
+                comando.Parameters.AddWithValue("@UBICACIONIMAGEN", picIMAGEN.ImageLocation.ToString());
+                comando.Parameters.AddWithValue("@IDPERFIL",lblMOSTARIDUSUARIO.Text);
+                DB.AbrirConexion();
+                DB.EjecutarComando(comando);
+                DB.CerrarConexion();
+
+                MessageBox.Show("SE MODIFICO USUARIO TAL:"+cmbSeleccionarUsuario.Text);
+                this.LimpiarDatos();
+
+
+
+            }
+            catch (Exception EX)
+            {
+                MessageBox.Show(EX.Message);
+                return;
+            }
+            tmrActualizar.Start();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Esta Seguro De Eliminar a El Usuario: " + cmbPerfiles.Text + "?"+"\n no se podra recuperar", "Elimar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            {
+                //no quiso
+                
+                return;
+            }
+            else
+            {
+                //si quiso
+                try
+                {
+                    CONEXIONBD.Servidor = SERVIDOR; //ANGEL - PC\SQLEXPRESS
+                    CONEXIONBD.Base_Datos = "FAKE_STEAM";
+                    CONEXIONBD.Usuario = this.USAURIO;
+                    CONEXIONBD.Contraseña = this.CONTRA;
+                    CONEXIONBD DB = new CONEXIONBD();
+                    SqlCommand comando = new SqlCommand("ELIMINAR_USUARIO2");
+                    comando.CommandType = CommandType.StoredProcedure;
+                    comando.Parameters.AddWithValue("@NOMBREL", cmbPerfiles.Text);
+                    DB.AbrirConexion();
+                    DB.EjecutarComando(comando);
+                    DB.CerrarConexion();
+
+                    MessageBox.Show("SE ELIMINO USUARIO :" + cmbPerfiles.Text);
+                    this.LimpiarDatos();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    return;
+                }
+            }
         }
     }
 }

@@ -47,7 +47,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grpUbicacion = new System.Windows.Forms.GroupBox();
             this.lblPAIS = new System.Windows.Forms.Label();
             this.cmbPAIS = new System.Windows.Forms.ComboBox();
             this.cmbESTADO = new System.Windows.Forms.ComboBox();
@@ -74,27 +74,42 @@
             this.btnACTUALIZARUSUARIO = new System.Windows.Forms.Button();
             this.grpActualizar = new System.Windows.Forms.GroupBox();
             this.tmrActualizar = new System.Windows.Forms.Timer(this.components);
+            this.label8 = new System.Windows.Forms.Label();
+            this.lblMostrarPais = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lblMostrarEstado = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.lblMostrarCiudad = new System.Windows.Forms.Label();
+            this.grpMOSTARUBICACION = new System.Windows.Forms.GroupBox();
+            this.chkUBICACION = new System.Windows.Forms.CheckBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lblMOSTARIDUSUARIO = new System.Windows.Forms.Label();
+            this.grpIDUsuario = new System.Windows.Forms.GroupBox();
             this.grpDATOS.SuspendLayout();
             this.grpPERFIL.SuspendLayout();
             this.grpPERSONAL.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.grpUbicacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picIMAGEN)).BeginInit();
             this.grpEliminar.SuspendLayout();
             this.grpSeleccionar.SuspendLayout();
             this.grpActualizar.SuspendLayout();
+            this.grpMOSTARUBICACION.SuspendLayout();
+            this.grpIDUsuario.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpDATOS
             // 
+            this.grpDATOS.Controls.Add(this.chkUBICACION);
+            this.grpDATOS.Controls.Add(this.grpMOSTARUBICACION);
             this.grpDATOS.Controls.Add(this.grpActualizar);
             this.grpDATOS.Controls.Add(this.btnACTUALIZARUSUARIO);
             this.grpDATOS.Controls.Add(this.grpPERFIL);
             this.grpDATOS.Controls.Add(this.grpPERSONAL);
-            this.grpDATOS.Controls.Add(this.groupBox1);
+            this.grpDATOS.Controls.Add(this.grpUbicacion);
             this.grpDATOS.Controls.Add(this.btnAGREGARUSUARIO);
             this.grpDATOS.Location = new System.Drawing.Point(12, 57);
             this.grpDATOS.Name = "grpDATOS";
-            this.grpDATOS.Size = new System.Drawing.Size(379, 535);
+            this.grpDATOS.Size = new System.Drawing.Size(379, 618);
             this.grpDATOS.TabIndex = 0;
             this.grpDATOS.TabStop = false;
             this.grpDATOS.Text = "DATOS:";
@@ -174,7 +189,7 @@
             this.grpPERSONAL.Controls.Add(this.label4);
             this.grpPERSONAL.Location = new System.Drawing.Point(16, 214);
             this.grpPERSONAL.Name = "grpPERSONAL";
-            this.grpPERSONAL.Size = new System.Drawing.Size(343, 150);
+            this.grpPERSONAL.Size = new System.Drawing.Size(343, 142);
             this.grpPERSONAL.TabIndex = 4;
             this.grpPERSONAL.TabStop = false;
             this.grpPERSONAL.Text = "PERSONAL";
@@ -243,20 +258,20 @@
             this.label4.TabIndex = 14;
             this.label4.Text = "FECHA NACIMIENTO:";
             // 
-            // groupBox1
+            // grpUbicacion
             // 
-            this.groupBox1.Controls.Add(this.lblPAIS);
-            this.groupBox1.Controls.Add(this.cmbPAIS);
-            this.groupBox1.Controls.Add(this.cmbESTADO);
-            this.groupBox1.Controls.Add(this.cmbCIUDAD);
-            this.groupBox1.Controls.Add(this.lblESTADO);
-            this.groupBox1.Controls.Add(this.lblCIUDAD);
-            this.groupBox1.Location = new System.Drawing.Point(16, 370);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(343, 116);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "UBICACION";
+            this.grpUbicacion.Controls.Add(this.lblPAIS);
+            this.grpUbicacion.Controls.Add(this.cmbPAIS);
+            this.grpUbicacion.Controls.Add(this.cmbESTADO);
+            this.grpUbicacion.Controls.Add(this.cmbCIUDAD);
+            this.grpUbicacion.Controls.Add(this.lblESTADO);
+            this.grpUbicacion.Controls.Add(this.lblCIUDAD);
+            this.grpUbicacion.Location = new System.Drawing.Point(16, 454);
+            this.grpUbicacion.Name = "grpUbicacion";
+            this.grpUbicacion.Size = new System.Drawing.Size(343, 116);
+            this.grpUbicacion.TabIndex = 4;
+            this.grpUbicacion.TabStop = false;
+            this.grpUbicacion.Text = "UBICACION";
             // 
             // lblPAIS
             // 
@@ -313,7 +328,7 @@
             // 
             // btnAGREGARUSUARIO
             // 
-            this.btnAGREGARUSUARIO.Location = new System.Drawing.Point(299, 493);
+            this.btnAGREGARUSUARIO.Location = new System.Drawing.Point(305, 576);
             this.btnAGREGARUSUARIO.Name = "btnAGREGARUSUARIO";
             this.btnAGREGARUSUARIO.Size = new System.Drawing.Size(74, 36);
             this.btnAGREGARUSUARIO.TabIndex = 4;
@@ -343,7 +358,7 @@
             // 
             // btnSALIR
             // 
-            this.btnSALIR.Location = new System.Drawing.Point(650, 550);
+            this.btnSALIR.Location = new System.Drawing.Point(632, 642);
             this.btnSALIR.Name = "btnSALIR";
             this.btnSALIR.Size = new System.Drawing.Size(76, 42);
             this.btnSALIR.TabIndex = 3;
@@ -361,11 +376,12 @@
             // 
             // grpEliminar
             // 
+            this.grpEliminar.Controls.Add(this.label9);
             this.grpEliminar.Controls.Add(this.btnEliminar);
             this.grpEliminar.Controls.Add(this.cmbPerfiles);
-            this.grpEliminar.Location = new System.Drawing.Point(433, 381);
+            this.grpEliminar.Location = new System.Drawing.Point(397, 381);
             this.grpEliminar.Name = "grpEliminar";
-            this.grpEliminar.Size = new System.Drawing.Size(200, 77);
+            this.grpEliminar.Size = new System.Drawing.Size(311, 145);
             this.grpEliminar.TabIndex = 4;
             this.grpEliminar.TabStop = false;
             this.grpEliminar.Text = "ELIMINAR USUARIO";
@@ -387,9 +403,9 @@
             this.grpSeleccionar.Controls.Add(this.radActualizar);
             this.grpSeleccionar.Controls.Add(this.radEliminar);
             this.grpSeleccionar.Controls.Add(this.radAgregar);
-            this.grpSeleccionar.Location = new System.Drawing.Point(43, 3);
+            this.grpSeleccionar.Location = new System.Drawing.Point(12, 3);
             this.grpSeleccionar.Name = "grpSeleccionar";
-            this.grpSeleccionar.Size = new System.Drawing.Size(300, 48);
+            this.grpSeleccionar.Size = new System.Drawing.Size(277, 48);
             this.grpSeleccionar.TabIndex = 24;
             this.grpSeleccionar.TabStop = false;
             this.grpSeleccionar.Text = "SELECCIONAR";
@@ -410,19 +426,20 @@
             // cmbPerfiles
             // 
             this.cmbPerfiles.FormattingEnabled = true;
-            this.cmbPerfiles.Location = new System.Drawing.Point(24, 19);
+            this.cmbPerfiles.Location = new System.Drawing.Point(124, 19);
             this.cmbPerfiles.Name = "cmbPerfiles";
             this.cmbPerfiles.Size = new System.Drawing.Size(170, 21);
             this.cmbPerfiles.TabIndex = 0;
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(57, 46);
+            this.btnEliminar.Location = new System.Drawing.Point(194, 116);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 1;
             this.btnEliminar.Text = "ELIMINAR";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // tmrEliminar
             // 
@@ -469,12 +486,13 @@
             // 
             // btnACTUALIZARUSUARIO
             // 
-            this.btnACTUALIZARUSUARIO.Location = new System.Drawing.Point(203, 493);
+            this.btnACTUALIZARUSUARIO.Location = new System.Drawing.Point(203, 576);
             this.btnACTUALIZARUSUARIO.Name = "btnACTUALIZARUSUARIO";
             this.btnACTUALIZARUSUARIO.Size = new System.Drawing.Size(90, 36);
             this.btnACTUALIZARUSUARIO.TabIndex = 8;
             this.btnACTUALIZARUSUARIO.Text = "&ACTUALIZAR USUARIO";
             this.btnACTUALIZARUSUARIO.UseVisualStyleBackColor = true;
+            this.btnACTUALIZARUSUARIO.Click += new System.EventHandler(this.btnACTUALIZARUSUARIO_Click);
             // 
             // grpActualizar
             // 
@@ -492,12 +510,121 @@
             // 
             this.tmrActualizar.Tick += new System.EventHandler(this.tmrActualizar_Tick);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 16);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(34, 13);
+            this.label8.TabIndex = 26;
+            this.label8.Text = "PAIS:";
+            // 
+            // lblMostrarPais
+            // 
+            this.lblMostrarPais.AutoSize = true;
+            this.lblMostrarPais.Location = new System.Drawing.Point(6, 34);
+            this.lblMostrarPais.Name = "lblMostrarPais";
+            this.lblMostrarPais.Size = new System.Drawing.Size(35, 13);
+            this.lblMostrarPais.TabIndex = 27;
+            this.lblMostrarPais.Text = "label9";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(122, 16);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(54, 13);
+            this.label10.TabIndex = 28;
+            this.label10.Text = "ESTADO:";
+            // 
+            // lblMostrarEstado
+            // 
+            this.lblMostrarEstado.AutoSize = true;
+            this.lblMostrarEstado.Location = new System.Drawing.Point(122, 34);
+            this.lblMostrarEstado.Name = "lblMostrarEstado";
+            this.lblMostrarEstado.Size = new System.Drawing.Size(41, 13);
+            this.lblMostrarEstado.TabIndex = 29;
+            this.lblMostrarEstado.Text = "label11";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(232, 13);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(51, 13);
+            this.label12.TabIndex = 30;
+            this.label12.Text = "CIUDAD:";
+            // 
+            // lblMostrarCiudad
+            // 
+            this.lblMostrarCiudad.AutoSize = true;
+            this.lblMostrarCiudad.Location = new System.Drawing.Point(232, 34);
+            this.lblMostrarCiudad.Name = "lblMostrarCiudad";
+            this.lblMostrarCiudad.Size = new System.Drawing.Size(41, 13);
+            this.lblMostrarCiudad.TabIndex = 31;
+            this.lblMostrarCiudad.Text = "label13";
+            // 
+            // grpMOSTARUBICACION
+            // 
+            this.grpMOSTARUBICACION.Controls.Add(this.lblMostrarCiudad);
+            this.grpMOSTARUBICACION.Controls.Add(this.label8);
+            this.grpMOSTARUBICACION.Controls.Add(this.label12);
+            this.grpMOSTARUBICACION.Controls.Add(this.lblMostrarPais);
+            this.grpMOSTARUBICACION.Controls.Add(this.lblMostrarEstado);
+            this.grpMOSTARUBICACION.Controls.Add(this.label10);
+            this.grpMOSTARUBICACION.Location = new System.Drawing.Point(28, 362);
+            this.grpMOSTARUBICACION.Name = "grpMOSTARUBICACION";
+            this.grpMOSTARUBICACION.Size = new System.Drawing.Size(331, 53);
+            this.grpMOSTARUBICACION.TabIndex = 25;
+            this.grpMOSTARUBICACION.TabStop = false;
+            this.grpMOSTARUBICACION.Text = "UBICACION";
+            // 
+            // chkUBICACION
+            // 
+            this.chkUBICACION.AutoSize = true;
+            this.chkUBICACION.Location = new System.Drawing.Point(121, 431);
+            this.chkUBICACION.Name = "chkUBICACION";
+            this.chkUBICACION.Size = new System.Drawing.Size(146, 17);
+            this.chkUBICACION.TabIndex = 26;
+            this.chkUBICACION.Text = "MODIFICAR UBICACION";
+            this.chkUBICACION.UseVisualStyleBackColor = true;
+            this.chkUBICACION.CheckedChanged += new System.EventHandler(this.chkUBICACION_CheckedChanged);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(20, 22);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(97, 13);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "NOMBRE PERFIL:";
+            // 
+            // lblMOSTARIDUSUARIO
+            // 
+            this.lblMOSTARIDUSUARIO.AutoSize = true;
+            this.lblMOSTARIDUSUARIO.Location = new System.Drawing.Point(6, 23);
+            this.lblMOSTARIDUSUARIO.Name = "lblMOSTARIDUSUARIO";
+            this.lblMOSTARIDUSUARIO.Size = new System.Drawing.Size(41, 13);
+            this.lblMOSTARIDUSUARIO.TabIndex = 26;
+            this.lblMOSTARIDUSUARIO.Text = "label13";
+            // 
+            // grpIDUsuario
+            // 
+            this.grpIDUsuario.Controls.Add(this.lblMOSTARIDUSUARIO);
+            this.grpIDUsuario.Location = new System.Drawing.Point(312, 12);
+            this.grpIDUsuario.Name = "grpIDUsuario";
+            this.grpIDUsuario.Size = new System.Drawing.Size(89, 45);
+            this.grpIDUsuario.TabIndex = 27;
+            this.grpIDUsuario.TabStop = false;
+            this.grpIDUsuario.Text = "IDUSUARIO";
+            // 
             // FormAGREGARUSUARIO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(738, 604);
+            this.ClientSize = new System.Drawing.Size(721, 687);
             this.ControlBox = false;
+            this.Controls.Add(this.grpIDUsuario);
             this.Controls.Add(this.grpSeleccionar);
             this.Controls.Add(this.grpEliminar);
             this.Controls.Add(this.btnSALIR);
@@ -509,18 +636,24 @@
             this.Text = "AGREGAR USUARIO";
             this.Load += new System.EventHandler(this.FormAGREGARUSUARIO_Load);
             this.grpDATOS.ResumeLayout(false);
+            this.grpDATOS.PerformLayout();
             this.grpPERFIL.ResumeLayout(false);
             this.grpPERFIL.PerformLayout();
             this.grpPERSONAL.ResumeLayout(false);
             this.grpPERSONAL.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.grpUbicacion.ResumeLayout(false);
+            this.grpUbicacion.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picIMAGEN)).EndInit();
             this.grpEliminar.ResumeLayout(false);
+            this.grpEliminar.PerformLayout();
             this.grpSeleccionar.ResumeLayout(false);
             this.grpSeleccionar.PerformLayout();
             this.grpActualizar.ResumeLayout(false);
             this.grpActualizar.PerformLayout();
+            this.grpMOSTARUBICACION.ResumeLayout(false);
+            this.grpMOSTARUBICACION.PerformLayout();
+            this.grpIDUsuario.ResumeLayout(false);
+            this.grpIDUsuario.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -539,7 +672,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox grpUbicacion;
         private System.Windows.Forms.Label lblPAIS;
         private System.Windows.Forms.ComboBox cmbPAIS;
         private System.Windows.Forms.ComboBox cmbESTADO;
@@ -571,5 +704,16 @@
         private System.Windows.Forms.Button btnACTUALIZARUSUARIO;
         private System.Windows.Forms.GroupBox grpActualizar;
         private System.Windows.Forms.Timer tmrActualizar;
+        private System.Windows.Forms.GroupBox grpMOSTARUBICACION;
+        private System.Windows.Forms.Label lblMostrarCiudad;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblMostrarPais;
+        private System.Windows.Forms.Label lblMostrarEstado;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.CheckBox chkUBICACION;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblMOSTARIDUSUARIO;
+        private System.Windows.Forms.GroupBox grpIDUsuario;
     }
 }
