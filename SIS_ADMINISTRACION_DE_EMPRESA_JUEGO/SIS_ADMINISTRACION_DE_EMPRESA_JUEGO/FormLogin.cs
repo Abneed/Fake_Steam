@@ -46,8 +46,8 @@ namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
                 
            
             frmPrincipal frmPrin = new frmPrincipal();
-            frmPrin.dataGridView1.DataSource = DB.EjecutarConsulta(new SqlCommand("SELECT * FROM ESTADO"));
-            frmPrin.dataGridView2.DataSource = DB.EjecutarConsulta(new SqlCommand("SELECT * FROM USUARIOS"));
+           // frmPrin.dgvJuegos.DataSource = DB.EjecutarConsulta(new SqlCommand("SELECT * FROM ESTADO"));
+          //  frmPrin.dataGridView2.DataSource = DB.EjecutarConsulta(new SqlCommand("SELECT * FROM USUARIOS"));
                 frmPrin.USUARIO = txtUsuario.Text;
                 frmPrin.CONTRA = txtContra.Text;
                 frmPrin.BASE = this.SERVIDOR;
