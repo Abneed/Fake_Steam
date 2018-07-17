@@ -321,7 +321,9 @@ namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
 
                 picIMAGEN.ImageLocation= NUEVO.Rows[0]["UBICACIONIMAGEN"].ToString();
                 lblMOSTARIDUSUARIO.Text= NUEVO.Rows[0]["IDUSUARIO"].ToString();
-                picIMAGEN.Refresh();
+                
+               // picIMAGEN.Refresh();
+                
                 
             }
             catch (Exception EX)
@@ -438,7 +440,7 @@ namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
                     CONEXIONBD DB = new CONEXIONBD();
                     SqlCommand comando = new SqlCommand("ELIMINAR_USUARIO2");
                     comando.CommandType = CommandType.StoredProcedure;
-                    comando.Parameters.AddWithValue("@NOMBREL", cmbPerfiles.Text);
+                    comando.Parameters.AddWithValue("@NOMBRE", cmbPerfiles.Text);
                     DB.AbrirConexion();
                     DB.EjecutarComando(comando);
                     DB.CerrarConexion();
