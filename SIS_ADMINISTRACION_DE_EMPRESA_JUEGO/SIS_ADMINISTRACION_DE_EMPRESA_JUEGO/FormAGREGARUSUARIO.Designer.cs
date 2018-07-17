@@ -31,6 +31,19 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAGREGARUSUARIO));
             this.grpDATOS = new System.Windows.Forms.GroupBox();
+            this.chkUBICACION = new System.Windows.Forms.CheckBox();
+            this.grpMOSTARUBICACION = new System.Windows.Forms.GroupBox();
+            this.lblMostrarCiudad = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.lblMostrarPais = new System.Windows.Forms.Label();
+            this.lblMostrarEstado = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.grpActualizar = new System.Windows.Forms.GroupBox();
+            this.lblSELECCIONARUSUARIO = new System.Windows.Forms.Label();
+            this.btnBuscarDatos = new System.Windows.Forms.Button();
+            this.cmbSeleccionarUsuario = new System.Windows.Forms.ComboBox();
+            this.btnACTUALIZARUSUARIO = new System.Windows.Forms.Button();
             this.grpPERFIL = new System.Windows.Forms.GroupBox();
             this.txtDESCPRIPCION = new System.Windows.Forms.TextBox();
             this.txtCORREO = new System.Windows.Forms.TextBox();
@@ -61,39 +74,27 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.grpEliminar = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.cmbPerfiles = new System.Windows.Forms.ComboBox();
             this.radAgregar = new System.Windows.Forms.RadioButton();
             this.grpSeleccionar = new System.Windows.Forms.GroupBox();
-            this.radEliminar = new System.Windows.Forms.RadioButton();
-            this.cmbPerfiles = new System.Windows.Forms.ComboBox();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.tmrEliminar = new System.Windows.Forms.Timer(this.components);
             this.radActualizar = new System.Windows.Forms.RadioButton();
-            this.cmbSeleccionarUsuario = new System.Windows.Forms.ComboBox();
-            this.lblSELECCIONARUSUARIO = new System.Windows.Forms.Label();
-            this.btnBuscarDatos = new System.Windows.Forms.Button();
-            this.btnACTUALIZARUSUARIO = new System.Windows.Forms.Button();
-            this.grpActualizar = new System.Windows.Forms.GroupBox();
+            this.radEliminar = new System.Windows.Forms.RadioButton();
+            this.tmrEliminar = new System.Windows.Forms.Timer(this.components);
             this.tmrActualizar = new System.Windows.Forms.Timer(this.components);
-            this.label8 = new System.Windows.Forms.Label();
-            this.lblMostrarPais = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.lblMostrarEstado = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.lblMostrarCiudad = new System.Windows.Forms.Label();
-            this.grpMOSTARUBICACION = new System.Windows.Forms.GroupBox();
-            this.chkUBICACION = new System.Windows.Forms.CheckBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.lblMOSTARIDUSUARIO = new System.Windows.Forms.Label();
             this.grpIDUsuario = new System.Windows.Forms.GroupBox();
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.grpDATOS.SuspendLayout();
+            this.grpMOSTARUBICACION.SuspendLayout();
+            this.grpActualizar.SuspendLayout();
             this.grpPERFIL.SuspendLayout();
             this.grpPERSONAL.SuspendLayout();
             this.grpUbicacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picIMAGEN)).BeginInit();
             this.grpEliminar.SuspendLayout();
             this.grpSeleccionar.SuspendLayout();
-            this.grpActualizar.SuspendLayout();
-            this.grpMOSTARUBICACION.SuspendLayout();
             this.grpIDUsuario.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -113,6 +114,136 @@
             this.grpDATOS.TabIndex = 0;
             this.grpDATOS.TabStop = false;
             this.grpDATOS.Text = "DATOS:";
+            // 
+            // chkUBICACION
+            // 
+            this.chkUBICACION.AutoSize = true;
+            this.chkUBICACION.Location = new System.Drawing.Point(121, 431);
+            this.chkUBICACION.Name = "chkUBICACION";
+            this.chkUBICACION.Size = new System.Drawing.Size(146, 17);
+            this.chkUBICACION.TabIndex = 26;
+            this.chkUBICACION.Text = "MODIFICAR UBICACION";
+            this.chkUBICACION.UseVisualStyleBackColor = true;
+            this.chkUBICACION.CheckedChanged += new System.EventHandler(this.chkUBICACION_CheckedChanged);
+            // 
+            // grpMOSTARUBICACION
+            // 
+            this.grpMOSTARUBICACION.Controls.Add(this.lblMostrarCiudad);
+            this.grpMOSTARUBICACION.Controls.Add(this.label8);
+            this.grpMOSTARUBICACION.Controls.Add(this.label12);
+            this.grpMOSTARUBICACION.Controls.Add(this.lblMostrarPais);
+            this.grpMOSTARUBICACION.Controls.Add(this.lblMostrarEstado);
+            this.grpMOSTARUBICACION.Controls.Add(this.label10);
+            this.grpMOSTARUBICACION.Location = new System.Drawing.Point(28, 362);
+            this.grpMOSTARUBICACION.Name = "grpMOSTARUBICACION";
+            this.grpMOSTARUBICACION.Size = new System.Drawing.Size(331, 53);
+            this.grpMOSTARUBICACION.TabIndex = 25;
+            this.grpMOSTARUBICACION.TabStop = false;
+            this.grpMOSTARUBICACION.Text = "UBICACION";
+            // 
+            // lblMostrarCiudad
+            // 
+            this.lblMostrarCiudad.AutoSize = true;
+            this.lblMostrarCiudad.Location = new System.Drawing.Point(232, 34);
+            this.lblMostrarCiudad.Name = "lblMostrarCiudad";
+            this.lblMostrarCiudad.Size = new System.Drawing.Size(41, 13);
+            this.lblMostrarCiudad.TabIndex = 31;
+            this.lblMostrarCiudad.Text = "label13";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 16);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(34, 13);
+            this.label8.TabIndex = 26;
+            this.label8.Text = "PAIS:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(232, 13);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(51, 13);
+            this.label12.TabIndex = 30;
+            this.label12.Text = "CIUDAD:";
+            // 
+            // lblMostrarPais
+            // 
+            this.lblMostrarPais.AutoSize = true;
+            this.lblMostrarPais.Location = new System.Drawing.Point(6, 34);
+            this.lblMostrarPais.Name = "lblMostrarPais";
+            this.lblMostrarPais.Size = new System.Drawing.Size(35, 13);
+            this.lblMostrarPais.TabIndex = 27;
+            this.lblMostrarPais.Text = "label9";
+            // 
+            // lblMostrarEstado
+            // 
+            this.lblMostrarEstado.AutoSize = true;
+            this.lblMostrarEstado.Location = new System.Drawing.Point(122, 34);
+            this.lblMostrarEstado.Name = "lblMostrarEstado";
+            this.lblMostrarEstado.Size = new System.Drawing.Size(41, 13);
+            this.lblMostrarEstado.TabIndex = 29;
+            this.lblMostrarEstado.Text = "label11";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(122, 16);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(54, 13);
+            this.label10.TabIndex = 28;
+            this.label10.Text = "ESTADO:";
+            // 
+            // grpActualizar
+            // 
+            this.grpActualizar.Controls.Add(this.lblSELECCIONARUSUARIO);
+            this.grpActualizar.Controls.Add(this.btnBuscarDatos);
+            this.grpActualizar.Controls.Add(this.cmbSeleccionarUsuario);
+            this.grpActualizar.Location = new System.Drawing.Point(16, 19);
+            this.grpActualizar.Name = "grpActualizar";
+            this.grpActualizar.Size = new System.Drawing.Size(343, 77);
+            this.grpActualizar.TabIndex = 25;
+            this.grpActualizar.TabStop = false;
+            this.grpActualizar.Text = "ACTUALIZAR";
+            // 
+            // lblSELECCIONARUSUARIO
+            // 
+            this.lblSELECCIONARUSUARIO.AutoSize = true;
+            this.lblSELECCIONARUSUARIO.Location = new System.Drawing.Point(-3, 28);
+            this.lblSELECCIONARUSUARIO.Name = "lblSELECCIONARUSUARIO";
+            this.lblSELECCIONARUSUARIO.Size = new System.Drawing.Size(137, 13);
+            this.lblSELECCIONARUSUARIO.TabIndex = 6;
+            this.lblSELECCIONARUSUARIO.Text = "SELECCIONAR USUARIO:";
+            // 
+            // btnBuscarDatos
+            // 
+            this.btnBuscarDatos.Location = new System.Drawing.Point(144, 52);
+            this.btnBuscarDatos.Name = "btnBuscarDatos";
+            this.btnBuscarDatos.Size = new System.Drawing.Size(117, 23);
+            this.btnBuscarDatos.TabIndex = 7;
+            this.btnBuscarDatos.Text = "buscar datos";
+            this.btnBuscarDatos.UseVisualStyleBackColor = true;
+            this.btnBuscarDatos.Click += new System.EventHandler(this.btnBuscarDatos_Click);
+            // 
+            // cmbSeleccionarUsuario
+            // 
+            this.cmbSeleccionarUsuario.FormattingEnabled = true;
+            this.cmbSeleccionarUsuario.Location = new System.Drawing.Point(144, 25);
+            this.cmbSeleccionarUsuario.Name = "cmbSeleccionarUsuario";
+            this.cmbSeleccionarUsuario.Size = new System.Drawing.Size(193, 21);
+            this.cmbSeleccionarUsuario.TabIndex = 5;
+            this.cmbSeleccionarUsuario.SelectedIndexChanged += new System.EventHandler(this.cmbSeleccionarUsuario_SelectedIndexChanged);
+            // 
+            // btnACTUALIZARUSUARIO
+            // 
+            this.btnACTUALIZARUSUARIO.Location = new System.Drawing.Point(203, 576);
+            this.btnACTUALIZARUSUARIO.Name = "btnACTUALIZARUSUARIO";
+            this.btnACTUALIZARUSUARIO.Size = new System.Drawing.Size(90, 36);
+            this.btnACTUALIZARUSUARIO.TabIndex = 8;
+            this.btnACTUALIZARUSUARIO.Text = "&ACTUALIZAR USUARIO";
+            this.btnACTUALIZARUSUARIO.UseVisualStyleBackColor = true;
+            this.btnACTUALIZARUSUARIO.Click += new System.EventHandler(this.btnACTUALIZARUSUARIO_Click);
             // 
             // grpPERFIL
             // 
@@ -386,6 +517,33 @@
             this.grpEliminar.TabStop = false;
             this.grpEliminar.Text = "ELIMINAR USUARIO";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(20, 22);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(97, 13);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "NOMBRE PERFIL:";
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(194, 116);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 1;
+            this.btnEliminar.Text = "ELIMINAR";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // cmbPerfiles
+            // 
+            this.cmbPerfiles.FormattingEnabled = true;
+            this.cmbPerfiles.Location = new System.Drawing.Point(124, 19);
+            this.cmbPerfiles.Name = "cmbPerfiles";
+            this.cmbPerfiles.Size = new System.Drawing.Size(170, 21);
+            this.cmbPerfiles.TabIndex = 0;
+            // 
             // radAgregar
             // 
             this.radAgregar.AutoSize = true;
@@ -411,40 +569,6 @@
             this.grpSeleccionar.Text = "SELECCIONAR";
             this.grpSeleccionar.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
-            // radEliminar
-            // 
-            this.radEliminar.AutoSize = true;
-            this.radEliminar.Location = new System.Drawing.Point(90, 19);
-            this.radEliminar.Name = "radEliminar";
-            this.radEliminar.Size = new System.Drawing.Size(76, 17);
-            this.radEliminar.TabIndex = 6;
-            this.radEliminar.TabStop = true;
-            this.radEliminar.Text = "ELIMINAR";
-            this.radEliminar.UseVisualStyleBackColor = true;
-            this.radEliminar.CheckedChanged += new System.EventHandler(this.radEliminar_CheckedChanged);
-            // 
-            // cmbPerfiles
-            // 
-            this.cmbPerfiles.FormattingEnabled = true;
-            this.cmbPerfiles.Location = new System.Drawing.Point(124, 19);
-            this.cmbPerfiles.Name = "cmbPerfiles";
-            this.cmbPerfiles.Size = new System.Drawing.Size(170, 21);
-            this.cmbPerfiles.TabIndex = 0;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Location = new System.Drawing.Point(194, 116);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminar.TabIndex = 1;
-            this.btnEliminar.Text = "ELIMINAR";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // tmrEliminar
-            // 
-            this.tmrEliminar.Tick += new System.EventHandler(this.tmrEliminar_Tick);
-            // 
             // radActualizar
             // 
             this.radActualizar.AutoSize = true;
@@ -457,147 +581,25 @@
             this.radActualizar.UseVisualStyleBackColor = true;
             this.radActualizar.CheckedChanged += new System.EventHandler(this.radActualizar_CheckedChanged);
             // 
-            // cmbSeleccionarUsuario
+            // radEliminar
             // 
-            this.cmbSeleccionarUsuario.FormattingEnabled = true;
-            this.cmbSeleccionarUsuario.Location = new System.Drawing.Point(144, 25);
-            this.cmbSeleccionarUsuario.Name = "cmbSeleccionarUsuario";
-            this.cmbSeleccionarUsuario.Size = new System.Drawing.Size(193, 21);
-            this.cmbSeleccionarUsuario.TabIndex = 5;
+            this.radEliminar.AutoSize = true;
+            this.radEliminar.Location = new System.Drawing.Point(90, 19);
+            this.radEliminar.Name = "radEliminar";
+            this.radEliminar.Size = new System.Drawing.Size(76, 17);
+            this.radEliminar.TabIndex = 6;
+            this.radEliminar.TabStop = true;
+            this.radEliminar.Text = "ELIMINAR";
+            this.radEliminar.UseVisualStyleBackColor = true;
+            this.radEliminar.CheckedChanged += new System.EventHandler(this.radEliminar_CheckedChanged);
             // 
-            // lblSELECCIONARUSUARIO
+            // tmrEliminar
             // 
-            this.lblSELECCIONARUSUARIO.AutoSize = true;
-            this.lblSELECCIONARUSUARIO.Location = new System.Drawing.Point(-3, 28);
-            this.lblSELECCIONARUSUARIO.Name = "lblSELECCIONARUSUARIO";
-            this.lblSELECCIONARUSUARIO.Size = new System.Drawing.Size(137, 13);
-            this.lblSELECCIONARUSUARIO.TabIndex = 6;
-            this.lblSELECCIONARUSUARIO.Text = "SELECCIONAR USUARIO:";
-            // 
-            // btnBuscarDatos
-            // 
-            this.btnBuscarDatos.Location = new System.Drawing.Point(144, 52);
-            this.btnBuscarDatos.Name = "btnBuscarDatos";
-            this.btnBuscarDatos.Size = new System.Drawing.Size(117, 23);
-            this.btnBuscarDatos.TabIndex = 7;
-            this.btnBuscarDatos.Text = "buscar datos";
-            this.btnBuscarDatos.UseVisualStyleBackColor = true;
-            this.btnBuscarDatos.Click += new System.EventHandler(this.btnBuscarDatos_Click);
-            // 
-            // btnACTUALIZARUSUARIO
-            // 
-            this.btnACTUALIZARUSUARIO.Location = new System.Drawing.Point(203, 576);
-            this.btnACTUALIZARUSUARIO.Name = "btnACTUALIZARUSUARIO";
-            this.btnACTUALIZARUSUARIO.Size = new System.Drawing.Size(90, 36);
-            this.btnACTUALIZARUSUARIO.TabIndex = 8;
-            this.btnACTUALIZARUSUARIO.Text = "&ACTUALIZAR USUARIO";
-            this.btnACTUALIZARUSUARIO.UseVisualStyleBackColor = true;
-            this.btnACTUALIZARUSUARIO.Click += new System.EventHandler(this.btnACTUALIZARUSUARIO_Click);
-            // 
-            // grpActualizar
-            // 
-            this.grpActualizar.Controls.Add(this.lblSELECCIONARUSUARIO);
-            this.grpActualizar.Controls.Add(this.btnBuscarDatos);
-            this.grpActualizar.Controls.Add(this.cmbSeleccionarUsuario);
-            this.grpActualizar.Location = new System.Drawing.Point(16, 19);
-            this.grpActualizar.Name = "grpActualizar";
-            this.grpActualizar.Size = new System.Drawing.Size(343, 77);
-            this.grpActualizar.TabIndex = 25;
-            this.grpActualizar.TabStop = false;
-            this.grpActualizar.Text = "ACTUALIZAR";
+            this.tmrEliminar.Tick += new System.EventHandler(this.tmrEliminar_Tick);
             // 
             // tmrActualizar
             // 
             this.tmrActualizar.Tick += new System.EventHandler(this.tmrActualizar_Tick);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 16);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(34, 13);
-            this.label8.TabIndex = 26;
-            this.label8.Text = "PAIS:";
-            // 
-            // lblMostrarPais
-            // 
-            this.lblMostrarPais.AutoSize = true;
-            this.lblMostrarPais.Location = new System.Drawing.Point(6, 34);
-            this.lblMostrarPais.Name = "lblMostrarPais";
-            this.lblMostrarPais.Size = new System.Drawing.Size(35, 13);
-            this.lblMostrarPais.TabIndex = 27;
-            this.lblMostrarPais.Text = "label9";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(122, 16);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(54, 13);
-            this.label10.TabIndex = 28;
-            this.label10.Text = "ESTADO:";
-            // 
-            // lblMostrarEstado
-            // 
-            this.lblMostrarEstado.AutoSize = true;
-            this.lblMostrarEstado.Location = new System.Drawing.Point(122, 34);
-            this.lblMostrarEstado.Name = "lblMostrarEstado";
-            this.lblMostrarEstado.Size = new System.Drawing.Size(41, 13);
-            this.lblMostrarEstado.TabIndex = 29;
-            this.lblMostrarEstado.Text = "label11";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(232, 13);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(51, 13);
-            this.label12.TabIndex = 30;
-            this.label12.Text = "CIUDAD:";
-            // 
-            // lblMostrarCiudad
-            // 
-            this.lblMostrarCiudad.AutoSize = true;
-            this.lblMostrarCiudad.Location = new System.Drawing.Point(232, 34);
-            this.lblMostrarCiudad.Name = "lblMostrarCiudad";
-            this.lblMostrarCiudad.Size = new System.Drawing.Size(41, 13);
-            this.lblMostrarCiudad.TabIndex = 31;
-            this.lblMostrarCiudad.Text = "label13";
-            // 
-            // grpMOSTARUBICACION
-            // 
-            this.grpMOSTARUBICACION.Controls.Add(this.lblMostrarCiudad);
-            this.grpMOSTARUBICACION.Controls.Add(this.label8);
-            this.grpMOSTARUBICACION.Controls.Add(this.label12);
-            this.grpMOSTARUBICACION.Controls.Add(this.lblMostrarPais);
-            this.grpMOSTARUBICACION.Controls.Add(this.lblMostrarEstado);
-            this.grpMOSTARUBICACION.Controls.Add(this.label10);
-            this.grpMOSTARUBICACION.Location = new System.Drawing.Point(28, 362);
-            this.grpMOSTARUBICACION.Name = "grpMOSTARUBICACION";
-            this.grpMOSTARUBICACION.Size = new System.Drawing.Size(331, 53);
-            this.grpMOSTARUBICACION.TabIndex = 25;
-            this.grpMOSTARUBICACION.TabStop = false;
-            this.grpMOSTARUBICACION.Text = "UBICACION";
-            // 
-            // chkUBICACION
-            // 
-            this.chkUBICACION.AutoSize = true;
-            this.chkUBICACION.Location = new System.Drawing.Point(121, 431);
-            this.chkUBICACION.Name = "chkUBICACION";
-            this.chkUBICACION.Size = new System.Drawing.Size(146, 17);
-            this.chkUBICACION.TabIndex = 26;
-            this.chkUBICACION.Text = "MODIFICAR UBICACION";
-            this.chkUBICACION.UseVisualStyleBackColor = true;
-            this.chkUBICACION.CheckedChanged += new System.EventHandler(this.chkUBICACION_CheckedChanged);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(20, 22);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(97, 13);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "NOMBRE PERFIL:";
             // 
             // lblMOSTARIDUSUARIO
             // 
@@ -618,6 +620,10 @@
             this.grpIDUsuario.TabStop = false;
             this.grpIDUsuario.Text = "IDUSUARIO";
             // 
+            // timer3
+            // 
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+            // 
             // FormAGREGARUSUARIO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -637,6 +643,10 @@
             this.Load += new System.EventHandler(this.FormAGREGARUSUARIO_Load);
             this.grpDATOS.ResumeLayout(false);
             this.grpDATOS.PerformLayout();
+            this.grpMOSTARUBICACION.ResumeLayout(false);
+            this.grpMOSTARUBICACION.PerformLayout();
+            this.grpActualizar.ResumeLayout(false);
+            this.grpActualizar.PerformLayout();
             this.grpPERFIL.ResumeLayout(false);
             this.grpPERFIL.PerformLayout();
             this.grpPERSONAL.ResumeLayout(false);
@@ -648,10 +658,6 @@
             this.grpEliminar.PerformLayout();
             this.grpSeleccionar.ResumeLayout(false);
             this.grpSeleccionar.PerformLayout();
-            this.grpActualizar.ResumeLayout(false);
-            this.grpActualizar.PerformLayout();
-            this.grpMOSTARUBICACION.ResumeLayout(false);
-            this.grpMOSTARUBICACION.PerformLayout();
             this.grpIDUsuario.ResumeLayout(false);
             this.grpIDUsuario.PerformLayout();
             this.ResumeLayout(false);
@@ -715,5 +721,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lblMOSTARIDUSUARIO;
         private System.Windows.Forms.GroupBox grpIDUsuario;
+        private System.Windows.Forms.Timer timer3;
     }
 }

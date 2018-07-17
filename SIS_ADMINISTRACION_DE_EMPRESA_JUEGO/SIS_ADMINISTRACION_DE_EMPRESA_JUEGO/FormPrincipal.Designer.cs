@@ -40,25 +40,25 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.grpVentas = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblContador = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnAGREGARALALISTA = new System.Windows.Forms.Button();
+            this.cmbJuegos = new System.Windows.Forms.ComboBox();
+            this.cmbUsuarios = new System.Windows.Forms.ComboBox();
             this.dgvJuegos = new System.Windows.Forms.DataGridView();
             this.juego = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.btnAGREGARALALISTA = new System.Windows.Forms.Button();
-            this.lblContador = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
@@ -66,8 +66,8 @@
             this.button9 = new System.Windows.Forms.Button();
             this.grpUSUARIO.SuspendLayout();
             this.grpVentas.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvJuegos)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvJuegos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -178,7 +178,7 @@
             this.grpVentas.Controls.Add(this.label1);
             this.grpVentas.Controls.Add(this.lblContador);
             this.grpVentas.Controls.Add(this.groupBox1);
-            this.grpVentas.Controls.Add(this.comboBox1);
+            this.grpVentas.Controls.Add(this.cmbUsuarios);
             this.grpVentas.Controls.Add(this.dgvJuegos);
             this.grpVentas.Controls.Add(this.button2);
             this.grpVentas.Controls.Add(this.button1);
@@ -193,43 +193,90 @@
             this.grpVentas.TabStop = false;
             this.grpVentas.Text = "VENTAS:";
             // 
-            // label5
+            // comboBox3
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(481, 294);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 20);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "IVA:";
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(469, 152);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(141, 21);
+            this.comboBox3.TabIndex = 24;
             // 
-            // label7
+            // label6
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(420, 258);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(101, 20);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "SUB TOTAL:";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(322, 157);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(133, 16);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "METODO DE PAGO:";
             // 
-            // button1
+            // label4
             // 
-            this.button1.Location = new System.Drawing.Point(446, 361);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "DECLINAR";
-            this.button1.UseVisualStyleBackColor = true;
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(527, 322);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(95, 23);
+            this.label4.TabIndex = 22;
+            this.label4.Text = "0";
             // 
-            // button2
+            // label1
             // 
-            this.button2.Location = new System.Drawing.Point(547, 361);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "COMPRAR";
-            this.button2.UseVisualStyleBackColor = true;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(527, 291);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(96, 23);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "0";
+            // 
+            // lblContador
+            // 
+            this.lblContador.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblContador.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContador.Location = new System.Drawing.Point(527, 258);
+            this.lblContador.Name = "lblContador";
+            this.lblContador.Size = new System.Drawing.Size(95, 23);
+            this.lblContador.TabIndex = 20;
+            this.lblContador.Text = "0";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnAGREGARALALISTA);
+            this.groupBox1.Controls.Add(this.cmbJuegos);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Location = new System.Drawing.Point(298, 19);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(220, 110);
+            this.groupBox1.TabIndex = 18;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "JUEGOS";
+            // 
+            // btnAGREGARALALISTA
+            // 
+            this.btnAGREGARALALISTA.Location = new System.Drawing.Point(82, 57);
+            this.btnAGREGARALALISTA.Name = "btnAGREGARALALISTA";
+            this.btnAGREGARALALISTA.Size = new System.Drawing.Size(82, 47);
+            this.btnAGREGARALALISTA.TabIndex = 19;
+            this.btnAGREGARALALISTA.Text = "AGREGAR AL CARRITO";
+            this.btnAGREGARALALISTA.UseVisualStyleBackColor = true;
+            // 
+            // cmbJuegos
+            // 
+            this.cmbJuegos.FormattingEnabled = true;
+            this.cmbJuegos.Location = new System.Drawing.Point(80, 19);
+            this.cmbJuegos.Name = "cmbJuegos";
+            this.cmbJuegos.Size = new System.Drawing.Size(121, 21);
+            this.cmbJuegos.TabIndex = 19;
+            // 
+            // cmbUsuarios
+            // 
+            this.cmbUsuarios.FormattingEnabled = true;
+            this.cmbUsuarios.Location = new System.Drawing.Point(91, 29);
+            this.cmbUsuarios.Name = "cmbUsuarios";
+            this.cmbUsuarios.Size = new System.Drawing.Size(121, 21);
+            this.cmbUsuarios.TabIndex = 17;
             // 
             // dgvJuegos
             // 
@@ -252,72 +299,43 @@
             this.precio.HeaderText = "precio";
             this.precio.Name = "precio";
             // 
-            // comboBox1
+            // button2
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(91, 29);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 17;
+            this.button2.Location = new System.Drawing.Point(547, 361);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 15;
+            this.button2.Text = "COMPRAR";
+            this.button2.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
+            // button1
             // 
-            this.groupBox1.Controls.Add(this.btnAGREGARALALISTA);
-            this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(298, 19);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(220, 110);
-            this.groupBox1.TabIndex = 18;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "JUEGOS";
+            this.button1.Location = new System.Drawing.Point(446, 361);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "DECLINAR";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // comboBox2
+            // label7
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(80, 19);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 19;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(420, 258);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(101, 20);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "SUB TOTAL:";
             // 
-            // btnAGREGARALALISTA
+            // label5
             // 
-            this.btnAGREGARALALISTA.Location = new System.Drawing.Point(82, 57);
-            this.btnAGREGARALALISTA.Name = "btnAGREGARALALISTA";
-            this.btnAGREGARALALISTA.Size = new System.Drawing.Size(82, 47);
-            this.btnAGREGARALALISTA.TabIndex = 19;
-            this.btnAGREGARALALISTA.Text = "AGREGAR AL CARRITO";
-            this.btnAGREGARALALISTA.UseVisualStyleBackColor = true;
-            // 
-            // lblContador
-            // 
-            this.lblContador.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblContador.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContador.Location = new System.Drawing.Point(527, 258);
-            this.lblContador.Name = "lblContador";
-            this.lblContador.Size = new System.Drawing.Size(95, 23);
-            this.lblContador.TabIndex = 20;
-            this.lblContador.Text = "0";
-            // 
-            // label1
-            // 
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(527, 291);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 23);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "0";
-            // 
-            // label4
-            // 
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(527, 322);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(95, 23);
-            this.label4.TabIndex = 22;
-            this.label4.Text = "0";
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(481, 294);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(40, 20);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "IVA:";
             // 
             // button3
             // 
@@ -345,24 +363,6 @@
             this.button5.TabIndex = 13;
             this.button5.Text = "ADMINISTRAR IDIOMAS";
             this.button5.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(322, 157);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(133, 16);
-            this.label6.TabIndex = 23;
-            this.label6.Text = "METODO DE PAGO:";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(469, 152);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(141, 21);
-            this.comboBox3.TabIndex = 24;
             // 
             // button6
             // 
@@ -435,9 +435,9 @@
             this.grpUSUARIO.PerformLayout();
             this.grpVentas.ResumeLayout(false);
             this.grpVentas.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvJuegos)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvJuegos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -461,8 +461,6 @@
         public System.Windows.Forms.Label lblContador;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnAGREGARALALISTA;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn juego;
         private System.Windows.Forms.DataGridViewTextBoxColumn precio;
         private System.Windows.Forms.Button button2;
@@ -480,5 +478,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button9;
         public System.Windows.Forms.DataGridView dgvJuegos;
+        public System.Windows.Forms.ComboBox cmbJuegos;
+        public System.Windows.Forms.ComboBox cmbUsuarios;
     }
 }

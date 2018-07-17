@@ -447,6 +447,7 @@ namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
 
                     MessageBox.Show("SE ELIMINO USUARIO :" + cmbPerfiles.Text);
                     this.LimpiarDatos();
+                    tmrEliminar.Start();
                 }
                 catch (Exception ex)
                 {
@@ -454,6 +455,16 @@ namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
                     return;
                 }
             }
+        }
+
+        private void cmbSeleccionarUsuario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+
         }
     }
 }
