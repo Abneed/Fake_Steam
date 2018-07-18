@@ -49,13 +49,18 @@ namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
                 // frmPrin.dgvJuegos.DataSource = DB.EjecutarConsulta(new SqlCommand("SELECT * FROM ESTADO"));
                 //  frmPrin.dataGridView2.DataSource = DB.EjecutarConsulta(new SqlCommand("SELECT * FROM USUARIOS"));
                 string cadena = " select NOMBRE from JUEGOS";
-                frmPrin.cmbJuegos.DisplayMember = "NOMBREPERFIL";
+                frmPrin.cmbJuegos.DisplayMember = "NOMBRE";
+                frmPrin.cmbJuegos.DataSource = DB.EjecutarConsulta(new SqlCommand(cadena));
 
                 string cadenausuarios = " select NOMBREPERFIL from USUARIOS";
                 frmPrin.cmbUsuarios.DisplayMember = "NOMBREPERFIL";
                 frmPrin.cmbUsuarios.DataSource = DB.EjecutarConsulta(new SqlCommand(cadenausuarios));
 
-                frmPrin.cmbJuegos.DataSource= DB.EjecutarConsulta(new SqlCommand(cadena));
+                string cadenaDESCRIPCION = " SELECT DESCRIPCION FROM METODOPAGO";
+                frmPrin.cmbMETODODEPAGO.DisplayMember = "DESCRIPCION";
+                frmPrin.cmbMETODODEPAGO.DataSource = DB.EjecutarConsulta(new SqlCommand(cadenaDESCRIPCION));
+
+
                 frmPrin.USUARIO = txtUsuario.Text;
                 frmPrin.CONTRA = txtContra.Text;
                 frmPrin.BASE = this.SERVIDOR;

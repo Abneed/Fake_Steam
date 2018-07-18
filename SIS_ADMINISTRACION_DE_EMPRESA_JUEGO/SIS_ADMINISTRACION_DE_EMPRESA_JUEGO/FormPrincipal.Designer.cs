@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnAGREGARUSUARIO = new System.Windows.Forms.Button();
@@ -40,12 +41,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.grpVentas = new System.Windows.Forms.GroupBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cmbMETODODEPAGO = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblContador = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblMOSTARPRECIO = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.btnAGREGARALALISTA = new System.Windows.Forms.Button();
             this.cmbJuegos = new System.Windows.Forms.ComboBox();
             this.cmbUsuarios = new System.Windows.Forms.ComboBox();
@@ -56,7 +59,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnAdministrarJuegos = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -64,6 +67,7 @@
             this.button8 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button9 = new System.Windows.Forms.Button();
+            this.TMRJUEGO = new System.Windows.Forms.Timer(this.components);
             this.grpUSUARIO.SuspendLayout();
             this.grpVentas.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -154,7 +158,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 19);
+            this.label2.Location = new System.Drawing.Point(6, 16);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 24);
             this.label2.TabIndex = 7;
@@ -172,7 +176,7 @@
             // 
             // grpVentas
             // 
-            this.grpVentas.Controls.Add(this.comboBox3);
+            this.grpVentas.Controls.Add(this.cmbMETODODEPAGO);
             this.grpVentas.Controls.Add(this.label6);
             this.grpVentas.Controls.Add(this.label4);
             this.grpVentas.Controls.Add(this.label1);
@@ -193,13 +197,13 @@
             this.grpVentas.TabStop = false;
             this.grpVentas.Text = "VENTAS:";
             // 
-            // comboBox3
+            // cmbMETODODEPAGO
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(469, 152);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(141, 21);
-            this.comboBox3.TabIndex = 24;
+            this.cmbMETODODEPAGO.FormattingEnabled = true;
+            this.cmbMETODODEPAGO.Location = new System.Drawing.Point(469, 152);
+            this.cmbMETODODEPAGO.Name = "cmbMETODODEPAGO";
+            this.cmbMETODODEPAGO.Size = new System.Drawing.Size(141, 21);
+            this.cmbMETODODEPAGO.TabIndex = 24;
             // 
             // label6
             // 
@@ -243,24 +247,47 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblMOSTARPRECIO);
+            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.btnAGREGARALALISTA);
             this.groupBox1.Controls.Add(this.cmbJuegos);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(298, 19);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(220, 110);
+            this.groupBox1.Size = new System.Drawing.Size(324, 110);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "JUEGOS";
             // 
+            // lblMOSTARPRECIO
+            // 
+            this.lblMOSTARPRECIO.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblMOSTARPRECIO.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMOSTARPRECIO.Location = new System.Drawing.Point(182, 58);
+            this.lblMOSTARPRECIO.Name = "lblMOSTARPRECIO";
+            this.lblMOSTARPRECIO.Size = new System.Drawing.Size(95, 23);
+            this.lblMOSTARPRECIO.TabIndex = 25;
+            this.lblMOSTARPRECIO.Text = "0";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(107, 57);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(69, 24);
+            this.label8.TabIndex = 20;
+            this.label8.Text = "Precio:";
+            // 
             // btnAGREGARALALISTA
             // 
-            this.btnAGREGARALALISTA.Location = new System.Drawing.Point(82, 57);
+            this.btnAGREGARALALISTA.Location = new System.Drawing.Point(10, 57);
             this.btnAGREGARALALISTA.Name = "btnAGREGARALALISTA";
             this.btnAGREGARALALISTA.Size = new System.Drawing.Size(82, 47);
             this.btnAGREGARALALISTA.TabIndex = 19;
             this.btnAGREGARALALISTA.Text = "AGREGAR AL CARRITO";
             this.btnAGREGARALALISTA.UseVisualStyleBackColor = true;
+            this.btnAGREGARALALISTA.Click += new System.EventHandler(this.btnAGREGARALALISTA_Click);
             // 
             // cmbJuegos
             // 
@@ -269,6 +296,7 @@
             this.cmbJuegos.Name = "cmbJuegos";
             this.cmbJuegos.Size = new System.Drawing.Size(121, 21);
             this.cmbJuegos.TabIndex = 19;
+            this.cmbJuegos.SelectedIndexChanged += new System.EventHandler(this.cmbJuegos_SelectedIndexChanged);
             // 
             // cmbUsuarios
             // 
@@ -337,14 +365,15 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "IVA:";
             // 
-            // button3
+            // btnAdministrarJuegos
             // 
-            this.button3.Location = new System.Drawing.Point(681, 471);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(95, 43);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "ADMINISTRAR JUEGOS";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnAdministrarJuegos.Location = new System.Drawing.Point(681, 471);
+            this.btnAdministrarJuegos.Name = "btnAdministrarJuegos";
+            this.btnAdministrarJuegos.Size = new System.Drawing.Size(95, 43);
+            this.btnAdministrarJuegos.TabIndex = 11;
+            this.btnAdministrarJuegos.Text = "ADMINISTRAR JUEGOS";
+            this.btnAdministrarJuegos.UseVisualStyleBackColor = true;
+            this.btnAdministrarJuegos.Click += new System.EventHandler(this.btnAdministrarJuegos_Click);
             // 
             // button4
             // 
@@ -363,6 +392,7 @@
             this.button5.TabIndex = 13;
             this.button5.Text = "ADMINISTRAR IDIOMAS";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -409,6 +439,10 @@
             this.button9.Text = "REPORTE DE VENTAS";
             this.button9.UseVisualStyleBackColor = true;
             // 
+            // TMRJUEGO
+            // 
+            this.TMRJUEGO.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -422,7 +456,7 @@
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnAdministrarJuegos);
             this.Controls.Add(this.grpVentas);
             this.Controls.Add(this.grpUSUARIO);
             this.Controls.Add(this.btnAGREGARUSUARIO);
@@ -467,9 +501,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnAdministrarJuegos;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
@@ -480,5 +513,9 @@
         public System.Windows.Forms.DataGridView dgvJuegos;
         public System.Windows.Forms.ComboBox cmbJuegos;
         public System.Windows.Forms.ComboBox cmbUsuarios;
+        public System.Windows.Forms.Label lblMOSTARPRECIO;
+        private System.Windows.Forms.Label label8;
+        public System.Windows.Forms.ComboBox cmbMETODODEPAGO;
+        public System.Windows.Forms.Timer TMRJUEGO;
     }
 }
