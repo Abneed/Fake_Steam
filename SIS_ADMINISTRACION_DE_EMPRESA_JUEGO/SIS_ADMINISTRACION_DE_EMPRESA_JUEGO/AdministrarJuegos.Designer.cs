@@ -57,6 +57,8 @@
             this.btnActualizar = new System.Windows.Forms.Button();
             this.grpIDJuego = new System.Windows.Forms.GroupBox();
             this.lblMOSTARJUEGO = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
             this.grpDatos.SuspendLayout();
             this.grpOpcion.SuspendLayout();
             this.grpEliminar.SuspendLayout();
@@ -103,6 +105,8 @@
             // 
             // grpDatos
             // 
+            this.grpDatos.Controls.Add(this.txtCantidad);
+            this.grpDatos.Controls.Add(this.label7);
             this.grpDatos.Controls.Add(this.btnActualizar);
             this.grpDatos.Controls.Add(this.grpIDJuego);
             this.grpDatos.Controls.Add(this.btnLimpiar);
@@ -173,7 +177,7 @@
             // cmbClasificacionJuego
             // 
             this.cmbClasificacionJuego.FormattingEnabled = true;
-            this.cmbClasificacionJuego.Location = new System.Drawing.Point(30, 185);
+            this.cmbClasificacionJuego.Location = new System.Drawing.Point(6, 185);
             this.cmbClasificacionJuego.Name = "cmbClasificacionJuego";
             this.cmbClasificacionJuego.Size = new System.Drawing.Size(121, 21);
             this.cmbClasificacionJuego.TabIndex = 9;
@@ -181,7 +185,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(58, 169);
+            this.label4.Location = new System.Drawing.Point(18, 169);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(66, 13);
             this.label4.TabIndex = 8;
@@ -320,7 +324,7 @@
             // grpIDJuego
             // 
             this.grpIDJuego.Controls.Add(this.lblMOSTARJUEGO);
-            this.grpIDJuego.Location = new System.Drawing.Point(182, 131);
+            this.grpIDJuego.Location = new System.Drawing.Point(182, 108);
             this.grpIDJuego.Name = "grpIDJuego";
             this.grpIDJuego.Size = new System.Drawing.Size(89, 45);
             this.grpIDJuego.TabIndex = 39;
@@ -335,6 +339,22 @@
             this.lblMOSTARJUEGO.Size = new System.Drawing.Size(41, 13);
             this.lblMOSTARJUEGO.TabIndex = 26;
             this.lblMOSTARJUEGO.Text = "label13";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(179, 169);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(65, 13);
+            this.label7.TabIndex = 40;
+            this.label7.Text = "CANTIDAD:";
+            // 
+            // txtCantidad
+            // 
+            this.txtCantidad.Location = new System.Drawing.Point(168, 185);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(100, 20);
+            this.txtCantidad.TabIndex = 41;
             // 
             // AdministrarJuegos
             // 
@@ -389,5 +409,7 @@
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.GroupBox grpIDJuego;
         private System.Windows.Forms.Label lblMOSTARJUEGO;
+        private System.Windows.Forms.TextBox txtCantidad;
+        private System.Windows.Forms.Label label7;
     }
 }

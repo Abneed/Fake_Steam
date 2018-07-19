@@ -52,6 +52,19 @@ namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
 
         private void FormAGREGARUSUARIO_Load(object sender, EventArgs e)
         {
+            if (this.USAURIO == "USUARIO")
+            {
+                radEliminar.Visible = false;
+
+            }
+            if (this.USAURIO == "ADMINISTRADOR")
+            {
+                
+            }
+            if (this.USAURIO == "JEFE")
+            {
+               
+            }
             picIMAGEN.ImageLocation = imgLoc;
             radAgregar.Checked = true;
             try

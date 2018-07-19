@@ -39,7 +39,7 @@ namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
                
             CONEXIONBD.Servidor = SERVIDOR; //ANGEL - PC\SQLEXPRESS
             CONEXIONBD.Base_Datos = "FAKE_STEAM";
-            CONEXIONBD.Usuario =   txtUsuario.Text;
+                CONEXIONBD.Usuario = txtUsuario.Text.ToUpper();
             CONEXIONBD.Contraseña = txtContra.Text;
                 CONEXIONBD DB = new CONEXIONBD();
                 DB.Conectar();

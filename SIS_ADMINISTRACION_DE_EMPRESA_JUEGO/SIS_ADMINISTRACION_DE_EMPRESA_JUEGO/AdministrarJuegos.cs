@@ -41,6 +41,7 @@ namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
                     comando.Parameters.AddWithValue("@NOMBRECLASIFICACION", cmbClasificacionJuego.Text);
                     comando.Parameters.AddWithValue("@NOMBREDISTRIBUIDOR", cmbDistribuidores.Text);
                     comando.Parameters.AddWithValue("@PRECIO", txtPrecio.Text);
+                    comando.Parameters.AddWithValue("@CANTIDAD", int.Parse(txtCantidad.Text));
                     DB.AbrirConexion();
                     DB.EjecutarComando(comando);
                     string cadena = " SELECT NOMBRE  FROM JUEGOS";
@@ -77,7 +78,7 @@ namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
                 CONEXIONBD.Contraseña = this.CONTRA;
                 CONEXIONBD DB = new CONEXIONBD();
                 DB.AbrirConexion();
-                string cadena = "SELECT JUE.NOMBRE,JUE.FECHALANZAMIENTO AS FECHA,DES.NOMBRE AS DESARROLLADOR,CLA.NOMBRE AS CLASIFICACION,DIS.NOMBRE AS DISTRIBUIDOR,JUE.PRECIO,JUE.IDJUEGO FROM JUEGOS AS JUE  JOIN DESARROLLADORES AS DES ON(JUE.IDDESARROLLADORES=DES.IDDESARROLLADOR) JOIN CLASIFICACIONES AS CLA ON(JUE.IDCLASIFICACION=CLA.IDCLASIFICACION) JOIN DISTRIBUIDORES AS DIS  ON(JUE.IDDISTRIBUIDOR=DIS.IDDISTRIBUIDOR) WHERE JUE.NOMBRE= " + "'" + cmbJuegoSeleccion.Text + "'";
+                string cadena = "SELECT JUE.NOMBRE,JUE.FECHALANZAMIENTO AS FECHA,DES.NOMBRE AS DESARROLLADOR,CLA.NOMBRE AS CLASIFICACION,DIS.NOMBRE AS DISTRIBUIDOR,JUE.PRECIO,JUE.IDJUEGO,JUE.CANTIDAD as cantidad FROM JUEGOS AS JUE  JOIN DESARROLLADORES AS DES ON(JUE.IDDESARROLLADORES=DES.IDDESARROLLADOR) JOIN CLASIFICACIONES AS CLA ON(JUE.IDCLASIFICACION=CLA.IDCLASIFICACION) JOIN DISTRIBUIDORES AS DIS  ON(JUE.IDDISTRIBUIDOR=DIS.IDDISTRIBUIDOR) WHERE JUE.NOMBRE= " + "'" + cmbJuegoSeleccion.Text + "'";
                 DataTable NUEVO = new DataTable();
                 NUEVO = DB.EjecutarConsulta(new SqlCommand(cadena));
                 DB.CerrarConexion();
@@ -88,6 +89,7 @@ namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
                 txtPrecio.Text = NUEVO.Rows[0]["PRECIO"].ToString();               
                 dtpJuegoLanzamiento.Value = DateTime.Parse(NUEVO.Rows[0]["FECHA"].ToString());
                 lblMOSTARJUEGO.Text = NUEVO.Rows[0]["IDJUEGO"].ToString();
+                txtCantidad.Text= NUEVO.Rows[0]["CANTIDAD"].ToString();
             }
             catch (Exception EX)
             {
@@ -217,7 +219,7 @@ namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
                     comando.Parameters.AddWithValue("@NOMBREDISTRIBUIDOR", cmbDistribuidores.Text);
                     comando.Parameters.AddWithValue("@PRECIO", txtPrecio.Text);
                     comando.Parameters.AddWithValue("@IDJUEGO",lblMOSTARJUEGO.Text);
-
+                    comando.Parameters.AddWithValue("@CANTIDAD", int.Parse(txtCantidad.Text));
                     DB.AbrirConexion();
                     DB.EjecutarComando(comando);
                     string cadena = " SELECT NOMBRE  FROM JUEGOS";
