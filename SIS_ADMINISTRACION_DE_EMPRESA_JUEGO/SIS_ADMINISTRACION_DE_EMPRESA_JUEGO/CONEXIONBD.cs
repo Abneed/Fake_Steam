@@ -8,13 +8,13 @@ using System.Data;
 
 namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
 {
-    class CONEXIONBD
+    class ConexionBD
     {
         private string cadena_Conexion = string.Format("Server={0};Database={1};User Id={2};" + "Password={3}", _Servidor, _BaseDatos, _Usuario, _Contraseña);
         private static string _Usuario, _Contraseña, _Servidor, _BaseDatos;
         private SqlConnection cn;
 
-        public static string Base_Datos
+        public static string BaseDatos
         {
             get
             {
@@ -101,7 +101,7 @@ namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
             return DatosConsulta;
         }
 
-        public CONEXIONBD()
+        public ConexionBD()
         {
             Conectar();
         }
