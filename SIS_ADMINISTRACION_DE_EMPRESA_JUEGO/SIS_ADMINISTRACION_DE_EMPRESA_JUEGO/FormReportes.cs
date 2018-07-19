@@ -12,12 +12,13 @@ using System.Data.SqlClient;
 namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
 {
    
-    public partial class REPORTES : Form
+    public partial class FormReportes : Form
     {
-        public string USUARIO = "";
-        public string CONTRA = "";
-        public string BASE = "";
-        public REPORTES()
+        //public string USUARIO = "";
+        //public string CONTRA = "";
+        //public string BASE = "";
+        private ConexionBD DB = new ConexionBD();
+        public FormReportes()
         {
             InitializeComponent();
         }
@@ -26,18 +27,15 @@ namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
         {
             try
             {
-
-           
-            CONEXIONBD.Servidor = this.BASE; //ANGEL - PC\SQLEXPRESS
-            CONEXIONBD.Base_Datos = "FAKE_STEAM";
-            CONEXIONBD.Usuario = this.USUARIO;
-            CONEXIONBD.Contraseña = this.CONTRA;
-            CONEXIONBD DB = new CONEXIONBD();
-            DB.Conectar();
-            string cadenausuarios = " select NOMBREPERFIL from USUARIOS";
-            cmbUsuarios.DisplayMember = "NOMBREPERFIL";
-            cmbUsuarios.DataSource = DB.EjecutarConsulta(new SqlCommand(cadenausuarios));
-            DB.CerrarConexion();
+                //ConexionBD.Servidor = this.BASE; //ANGEL - PC\SQLEXPRESS
+                //ConexionBD.BaseDatos = "FAKE_STEAM";
+                //ConexionBD.Usuario = this.USUARIO;
+                //ConexionBD.Contraseña = this.CONTRA;
+                DB.Conectar();
+                string cadenausuarios = " select NOMBREPERFIL from USUARIOS";
+                cmbUsuarios.DisplayMember = "NOMBREPERFIL";
+                cmbUsuarios.DataSource = DB.EjecutarConsulta(new SqlCommand(cadenausuarios));
+                DB.CerrarConexion();
             }
             catch (Exception ex)
             {
@@ -57,11 +55,11 @@ namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
             {
 
             
-            CONEXIONBD.Servidor = this.BASE; //ANGEL - PC\SQLEXPRESS
-            CONEXIONBD.Base_Datos = "FAKE_STEAM";
-            CONEXIONBD.Usuario = this.USUARIO;
-            CONEXIONBD.Contraseña = this.CONTRA;
-            CONEXIONBD DB = new CONEXIONBD();
+            //ConexionBD.Servidor = this.BASE; //ANGEL - PC\SQLEXPRESS
+            //ConexionBD.BaseDatos = "FAKE_STEAM";
+            //ConexionBD.Usuario = this.USUARIO;
+            //ConexionBD.Contraseña = this.CONTRA;
+            //ConexionBD DB = new ConexionBD();
             DB.Conectar();
             string cadena = "select ven.IDVENTA,VEN.FECHAVENTA,MET.DESCRIPCION,USU.NOMBREPERFIL AS[NOMBRE PERFIL],JUE.NOMBRE AS [NOMBRE DEL JUEGO],VEN.CANTIDAD AS [TOTAL DE COPIAS],VEN.PRECIO AS[PRECIO POR UNIDAD],VEN.CANTIDAD*VEN.PRECIO AS [TOTAL DE LA VENTA] from ventas AS ven join METODOPAGO AS MET ON (MET.IDMETODOPAGO=VEN.IDMETODOPAGO) JOIN USUARIOS AS USU ON(USU.IDUSUARIO=VEN.IDUSUARIO) JOIN VENTAS_JUEGOS AS VENTJUE ON(ven.IDVENTA=VENTJUE.IDVENTA) JOIN JUEGOS AS JUE ON(VENTJUE.IDJUEGO=JUE.IDJUEGO) ORDER BY VEN.FECHAVENTA"; 
             dgvReporte.DataSource = DB.EjecutarConsulta(new SqlCommand(cadena));
@@ -81,19 +79,19 @@ namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
             try
             {
 
-            
-            CONEXIONBD.Servidor = this.BASE; //ANGEL - PC\SQLEXPRESS
-            CONEXIONBD.Base_Datos = "FAKE_STEAM";
-            CONEXIONBD.Usuario = this.USUARIO;
-            CONEXIONBD.Contraseña = this.CONTRA;
-            CONEXIONBD DB = new CONEXIONBD();
-            DB.Conectar();
-            string cadena = "SELECT SUM(CANTIDAD*PRECIO) AS TOTAL FROM VENTAS";
-            DataTable NE = new DataTable();
 
-            NE = DB.EjecutarConsulta(new SqlCommand(cadena));
-           lblTOTAL.Text = NE.Rows[0]["TOTAL"].ToString();
-            DB.CerrarConexion();
+                //ConexionBD.Servidor = this.BASE; //ANGEL - PC\SQLEXPRESS
+                //ConexionBD.BaseDatos = "FAKE_STEAM";
+                //ConexionBD.Usuario = this.USUARIO;
+                //ConexionBD.Contraseña = this.CONTRA;
+                //ConexionBD DB = new ConexionBD();
+                DB.Conectar();
+                string cadena = "SELECT SUM(CANTIDAD*PRECIO) AS TOTAL FROM VENTAS";
+                DataTable NE = new DataTable();
+
+                NE = DB.EjecutarConsulta(new SqlCommand(cadena));
+                lblTOTAL.Text = NE.Rows[0]["TOTAL"].ToString();
+                DB.CerrarConexion();
             }
             catch (Exception ex)
             {
@@ -107,26 +105,24 @@ namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
         {
             try
             {
-
-        
-            CONEXIONBD.Servidor = this.BASE; //ANGEL - PC\SQLEXPRESS
-            CONEXIONBD.Base_Datos = "FAKE_STEAM";
-            CONEXIONBD.Usuario = this.USUARIO;
-            CONEXIONBD.Contraseña = this.CONTRA;
-            CONEXIONBD DB = new CONEXIONBD();
-            DB.Conectar();
-            string cadena = "select ven.IDVENTA,VEN.FECHAVENTA,MET.DESCRIPCION,USU.NOMBREPERFIL AS[NOMBRE PERFIL],JUE.NOMBRE AS [NOMBRE DEL JUEGO],VEN.CANTIDAD AS [TOTAL DE COPIAS],VEN.PRECIO AS[PRECIO POR UNIDAD],VEN.CANTIDAD*VEN.PRECIO AS [TOTAL DE LA VENTA] from ventas AS ven join METODOPAGO AS MET ON (MET.IDMETODOPAGO=VEN.IDMETODOPAGO) JOIN USUARIOS AS USU ON(USU.IDUSUARIO=VEN.IDUSUARIO) JOIN VENTAS_JUEGOS AS VENTJUE ON(ven.IDVENTA=VENTJUE.IDVENTA) JOIN JUEGOS AS JUE ON(VENTJUE.IDJUEGO=JUE.IDJUEGO) WHERE USU.NOMBREPERFIL=" + "'" + cmbUsuarios.Text + "'";
-            dgvReporte.DataSource = DB.EjecutarConsulta(new SqlCommand(cadena));
-            string cadena2 = "SELECT SUM(ven.CANTIDAD*ven.PRECIO) AS TOTAL FROM VENTAS as ven join USUARIOS as usu on(ven.IDUSUARIO = usu.IDUSUARIO) where usu.NOMBREPERFIL =" + " '" + cmbUsuarios.Text + "'";
-            DataTable NE = new DataTable();
-            NE = DB.EjecutarConsulta(new SqlCommand(cadena2));
-            lblTOTAL.Text = NE.Rows[0]["TOTAL"].ToString();
-            DB.CerrarConexion();
+                //ConexionBD.Servidor = this.BASE; //ANGEL - PC\SQLEXPRESS
+                //ConexionBD.BaseDatos = "FAKE_STEAM";
+                //ConexionBD.Usuario = this.USUARIO;
+                //ConexionBD.Contraseña = this.CONTRA;
+                //ConexionBD DB = new ConexionBD();
+                DB.Conectar();
+                string cadena = "select ven.IDVENTA,VEN.FECHAVENTA,MET.DESCRIPCION,USU.NOMBREPERFIL AS[NOMBRE PERFIL],JUE.NOMBRE AS [NOMBRE DEL JUEGO],VEN.CANTIDAD AS [TOTAL DE COPIAS],VEN.PRECIO AS[PRECIO POR UNIDAD],VEN.CANTIDAD*VEN.PRECIO AS [TOTAL DE LA VENTA] from ventas AS ven join METODOPAGO AS MET ON (MET.IDMETODOPAGO=VEN.IDMETODOPAGO) JOIN USUARIOS AS USU ON(USU.IDUSUARIO=VEN.IDUSUARIO) JOIN VENTAS_JUEGOS AS VENTJUE ON(ven.IDVENTA=VENTJUE.IDVENTA) JOIN JUEGOS AS JUE ON(VENTJUE.IDJUEGO=JUE.IDJUEGO) WHERE USU.NOMBREPERFIL=" + "'" + cmbUsuarios.Text + "'";
+                dgvReporte.DataSource = DB.EjecutarConsulta(new SqlCommand(cadena));
+                string cadena2 = "SELECT SUM(ven.CANTIDAD*ven.PRECIO) AS TOTAL FROM VENTAS as ven join USUARIOS as usu on(ven.IDUSUARIO = usu.IDUSUARIO) where usu.NOMBREPERFIL =" + " '" + cmbUsuarios.Text + "'";
+                DataTable NE = new DataTable();
+                NE = DB.EjecutarConsulta(new SqlCommand(cadena2));
+                lblTOTAL.Text = NE.Rows[0]["TOTAL"].ToString();
+                DB.CerrarConexion();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                return ;
+                return;
             }
         }
 
@@ -134,13 +130,11 @@ namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
         {
             try
             {
-
-
-                CONEXIONBD.Servidor = this.BASE; //ANGEL - PC\SQLEXPRESS
-                CONEXIONBD.Base_Datos = "FAKE_STEAM";
-                CONEXIONBD.Usuario = this.USUARIO;
-                CONEXIONBD.Contraseña = this.CONTRA;
-                CONEXIONBD DB = new CONEXIONBD();
+                //ConexionBD.Servidor = this.BASE; //ANGEL - PC\SQLEXPRESS
+                //ConexionBD.BaseDatos = "FAKE_STEAM";
+                //ConexionBD.Usuario = this.USUARIO;
+                //ConexionBD.Contraseña = this.CONTRA;
+                ConexionBD DB = new ConexionBD();
                 DB.Conectar();
                 string cadena = "select ven.IDVENTA,VEN.FECHAVENTA,MET.DESCRIPCION,USU.NOMBREPERFIL AS[NOMBRE PERFIL],JUE.NOMBRE AS [NOMBRE DEL JUEGO],VEN.CANTIDAD AS [TOTAL DE COPIAS],VEN.PRECIO AS[PRECIO POR UNIDAD],VEN.CANTIDAD*VEN.PRECIO AS [TOTAL DE LA VENTA] from ventas AS ven join METODOPAGO AS MET ON (MET.IDMETODOPAGO=VEN.IDMETODOPAGO) JOIN USUARIOS AS USU ON(USU.IDUSUARIO=VEN.IDUSUARIO) JOIN VENTAS_JUEGOS AS VENTJUE ON(ven.IDVENTA=VENTJUE.IDVENTA) JOIN JUEGOS AS JUE ON(VENTJUE.IDJUEGO=JUE.IDJUEGO) WHERE ven.FECHAVENTA=" + "'" + dtmFecha.Value.Month + "-" + dtmFecha.Value.Day + "-" + dtmFecha.Value.Year + "'"+ "ORDER BY VEN.FECHAVENTA";
                 dgvReporte.DataSource = DB.EjecutarConsulta(new SqlCommand(cadena));

@@ -1,6 +1,6 @@
 ﻿namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
 {
-    partial class REPORTES
+    partial class FormReportes
     {
         /// <summary>
         /// Required designer variable.
