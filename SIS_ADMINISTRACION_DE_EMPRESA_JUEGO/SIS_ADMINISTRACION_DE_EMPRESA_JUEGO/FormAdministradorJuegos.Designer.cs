@@ -1,6 +1,6 @@
 ﻿namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
 {
-    partial class FormAdministrarJuegos
+    partial class FormAdministradorJuegos
     {
         /// <summary>
         /// Required designer variable.

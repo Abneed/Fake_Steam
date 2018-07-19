@@ -11,9 +11,9 @@ using System.Data.SqlClient;
 
 namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
 {
-    public partial class FormAdministrarJuegos : Form
+    public partial class FormAdministradorJuegos : Form
     {
-        public FormAdministrarJuegos()
+        public FormAdministradorJuegos()
         {
             InitializeComponent();
         }
