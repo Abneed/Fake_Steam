@@ -1,6 +1,6 @@
 ﻿namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
 {
-    partial class frmPrincipal
+    partial class FormPrincipal
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnAGREGARUSUARIO = new System.Windows.Forms.Button();
             this.lblUsuario = new System.Windows.Forms.Label();
