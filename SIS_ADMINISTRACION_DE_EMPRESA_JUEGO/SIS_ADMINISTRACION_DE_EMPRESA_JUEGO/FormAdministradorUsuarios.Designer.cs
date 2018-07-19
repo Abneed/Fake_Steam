@@ -1,6 +1,6 @@
 ﻿namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
 {
-    partial class FormAGREGARUSUARIO
+    partial class FormAdministradorUsuarios
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAGREGARUSUARIO));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdministradorUsuarios));
             this.grpDATOS = new System.Windows.Forms.GroupBox();
             this.chkUBICACION = new System.Windows.Forms.CheckBox();
             this.grpMOSTARUBICACION = new System.Windows.Forms.GroupBox();
@@ -606,9 +606,9 @@
             this.lblMOSTARIDUSUARIO.AutoSize = true;
             this.lblMOSTARIDUSUARIO.Location = new System.Drawing.Point(6, 23);
             this.lblMOSTARIDUSUARIO.Name = "lblMOSTARIDUSUARIO";
-            this.lblMOSTARIDUSUARIO.Size = new System.Drawing.Size(41, 13);
+            this.lblMOSTARIDUSUARIO.Size = new System.Drawing.Size(23, 13);
             this.lblMOSTARIDUSUARIO.TabIndex = 26;
-            this.lblMOSTARIDUSUARIO.Text = "label13";
+            this.lblMOSTARIDUSUARIO.Text = "null";
             // 
             // grpIDUsuario
             // 
@@ -624,7 +624,7 @@
             // 
             this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
             // 
-            // FormAGREGARUSUARIO
+            // FormAdministradorUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -637,9 +637,9 @@
             this.Controls.Add(this.btnBUSCAR);
             this.Controls.Add(this.picIMAGEN);
             this.Controls.Add(this.grpDATOS);
-            this.Name = "FormAGREGARUSUARIO";
+            this.Name = "FormAdministradorUsuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AGREGAR USUARIO";
+            this.Text = "Administrador de usuarios";
             this.Load += new System.EventHandler(this.FormAGREGARUSUARIO_Load);
             this.grpDATOS.ResumeLayout(false);
             this.grpDATOS.PerformLayout();
