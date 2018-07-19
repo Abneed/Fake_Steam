@@ -1,6 +1,6 @@
 ﻿namespace SIS_ADMINISTRACION_DE_EMPRESA_JUEGO
 {
-    partial class FormLogin
+    partial class FormIniciarSesion
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormIniciarSesion));
             this.grpDATOS = new System.Windows.Forms.GroupBox();
             this.txtContra = new System.Windows.Forms.TextBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
@@ -130,7 +130,7 @@
             this.Controls.Add(this.grpDATOS);
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "USUARIO/CONTRASEÑA";
+            this.Text = "Iniciar sesion";
             this.grpDATOS.ResumeLayout(false);
             this.grpDATOS.PerformLayout();
             this.ResumeLayout(false);
